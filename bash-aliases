@@ -1,0 +1,41 @@
+#!/bin/bash
+alias man='man -a'
+alias diff='diff -Naur'
+# for mac OS X with missing pgrep
+# alias pgrep='ps ax | fgrep'
+# legacy software from xerox
+alias pckimmo='LC_ALL=fi_FI LANG=fi_FI luit pckimmo'
+alias twolc='LC_ALL=fi_FI luit twolc'
+alias lexc='LC_ALL=fi_FI luit lexc'
+alias xfst='LC_ALL=fi_FI luit xfst'
+
+alias nisudo='sudo nice'
+
+alias svim='sudo vim'
+
+alias cvs-status='cvs status | grep "^File"'
+
+debugmake() {
+	dbgflags="-g -pg -fno-inline"
+	CFLAGS="${CFLAGS} ${dbgflags}" CXXFLAGS="${CXXFLAGS} ${dbgflags}" make $@
+}
+
+backup() {
+	mv $1 $1~
+}
+
+eskel() {
+	cp /usr/portage/skel.ebuild ./$1.ebuild
+	cp /usr/portage/skel.ChangeLog ./ChangeLog
+	cp /usr/portage/skel.metadata.xml ./metadata.xml
+	LC_ALL=C sed -i -e "s/<PACKAGE_NAME>-<PACKAGE_VERSION>-<PACKAGE_RELEASE>/$1/g" \
+		-e "s/DD MMM YYYY/$(date '+%d %b %Y')/g" \
+		-e 's/YOUR_NAME/Flammie Pirinen/g' \
+		-e 's/YOUR_EMAIL/flammie@gentoo.org/g' ChangeLog
+	sed -i -e 's/>@gentoo.org/>flammie@gentoo.org/g' metadata.xml
+}
+
+etest() {
+	ebuild $1 unpack && ebuild $1 compile && ebuild $1 install
+}
+# vim: set ft=sh
