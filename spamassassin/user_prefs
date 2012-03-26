@@ -1,0 +1,56 @@
+# SpamAssassin user preferences file.  See 'perldoc Mail::SpamAssassin::Conf'
+# for details of what can be tweaked.
+###########################################################################
+
+required_score		5
+
+bayes_journal_max_size 102400
+bayes_auto_expire 1
+
+# Rescoring rules:
+## header quirks
+score INVALID_DATE 3.3
+score DATE_IN_FUTURE_06_12 2.5
+score MIME_HTML_ONLY 2.5
+score MIME_HTML_MOSTLY 1.9
+score MIME_BOUND_NEXTPART 1.3
+score MIME_HEADER_CTYPE_ONLY 1.0
+score RATWARE_MS_HASH 3.3
+score NO_REAL_NAME 1.3
+score RCVD_ILLEGAL_IP 3.3
+## content syntax
+score HTML_MESSAGE 0.5
+score UPPERCASE_25_50 0.5
+score UPPERCASE_50_75 1.0
+score HTML_TITLE_EMPTY 0.5
+score HTML_TAG_BALANCE_BODY 0.5
+score HTML_TEXT_AFTER_BODY 0.5
+score HTML_IMAGE_ONLY_12 2.8
+score HTML_IMAGE_ONLY_16 2.6
+score HTML_IMAGE_ONLY_28 2.4
+score HTML_IMAGE_ONLY_32 2.2
+score HTML_FONT_SIZE_LARGE 1.0
+score HTML_FONT_FACE_BAD 2.5
+score REPTO_OVERQUOTE_THEBAT 3.3
+score UNRESOLVED_TEMPLATE 3.0
+score NORMAL_HTTP_TO_IP 1.0
+score FH_DATE_PAST_20XX 0.0
+## message/subject semantic contents
+score FUZZY_MILLION 5.0
+score INVESTMENT_ADVICE 5.0
+score STRONG_BUY 5.0
+score NA_DOLLARS 5.0
+score STOCK_ALERT 10.0
+score DISGUISE_PORN_MUNDANE 4.0
+score SUBJECT_SEXUAL 0.5
+score BODY_ENHANCEMENT2 2.5
+score PORN_15 1.5
+score HOT_NASTY 1.0
+score URG_BIZ 1.5
+score ADDRESS_IN_SUBJECT 1.5
+score ADVANCE_FEE_1 3.0
+score ADVANCE_FEE_2 3.0
+score LONGWORDS 0.1
+## statistics
+score BAYES_99 5.2
+score BAYES_80 2.4
