@@ -1,0 +1,8 @@
+====================
+ Flammie's dotfiles
+====================
+
+This repository is for managing "roaming" settings profile of Flammie A Pirinen
+For all sorts of Unix-like environments. While the dotfiles generally are too
+small and trivial to be copyrightable at all, consider my intent to be that
+they are GNU GPLv3, not later or earlier, so distribute, attribute, keep free.
