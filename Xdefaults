@@ -1,0 +1,22 @@
+! Default stuff to white on blck
+*background: black
+*foreground: white
+
+! Xterm reference colors in /etc/X11/app-defaults/XTerm-Color
+XTerm*faceName: Terminus
+XTerm*faceSize: 12
+XTerm*visualBell: True
+XTerm*bellIsUrgent: True
+XTerm*utf8: 3
+XTerm*utf8Title: True
+XTerm*scrollBar: True
+XTerm*scrollTtyOutput: False
+XTerm*saveLines: 1000
+! XClock tweaks
+XClock*hourColor: white
+XClock*minuteColor: white
+XClock*secondColor: white
+XClock*majorColor: white
+XClock*minorColor: white
+
+
