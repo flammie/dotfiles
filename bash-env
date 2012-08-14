@@ -1,13 +1,12 @@
-EDITOR=vim
-CPATH=/opt/local/include:/usr/local/include:/usr/include
-PKG_CONFIG_PATH=/opt/local/lib/pkgconfig:/opt/local/share/pkgconfig:/usr/local/lib/pkgconfig:/usr/local/share/pkgconfig
-CFLAGS="-O2 -Wall -Wextra "
-CXXFLAGS="${CFLAGS}"
-LANGUAGE=fi:en:sv:fr:hu:et:C
-LC_ALL=fi_FI.UTF-8
-PATH=/opt/local/bin/:${PATH}:${HOME}/bin/
-YFLAGS=-v
-PS1='\[\033[01;32m\]\u@\h\[\033[01;34m\] \w\[\033[01;36m\] (\!)\[\033[01;30m\] [\t] \[\033[00m\]\n\$ '
-CLICOLOR=1
-
-export EDITOR CFLAGS CXXFLAGS CLICOLOR LANGUAGE LC_ALL PATH YFLAGS PS1 CPATH PKG_CONFIG_PATH
+export EDITOR=vim
+export CPATH=/opt/local/include:/usr/local/include:/usr/include
+export PKG_CONFIG_PATH=/opt/local/lib/pkgconfig:/opt/local/share/pkgconfig:/usr/local/lib/pkgconfig:/usr/local/share/pkgconfig:$HOME/lib/pkgconfig:$HOME/share/pkgconfig
+export CFLAGS="-O2 -march=native -ggdb -Wall -Wextra "
+export CXXFLAGS="${CFLAGS}"
+export LANGUAGE=fi:en:sv:fr:hu:et:C
+export LC_ALL=fi_FI.UTF-8
+export PATH=/opt/local/bin/:${PATH}:${HOME}/bin/
+export YFLAGS=-v
+export PS1='\[\033[01;32m\]\u@\h\[\033[01;34m\] \w\[\033[01;36m\] (\!)\[\033[01;30m\] [\t] \[\033[00m\]\n\$ '
+export CLICOLOR=1
+export ECHANGELOG_USER="Flammie Pirinen <flammie@gentoo.org>"
