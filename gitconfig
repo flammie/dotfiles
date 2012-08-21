@@ -3,3 +3,7 @@
 	email = flammie@iki.fi
 [github]
 	user = flammie
+[core]
+	editor = vim
+[merge]
+	tool = vimdiff
