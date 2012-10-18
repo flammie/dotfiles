@@ -20,28 +20,46 @@ syn sync clear
 syn case match
 
 " Internal keywords
-syn keyword	lexcKeyWords	Multichar_Symbols Definitions Declarations LEXICON END 
+syn keyword	lexcKeyWords	Multichar_Symbols Definitions Declarations LEXICON END
+syn keyword     lexcKeyWordErrors       multichar_symbols Multichar_symbols Lexicon lexicon
 
-" Lexicon data
+" Multichar data
+syn region      lexcMultichars  start=/^Multichar_Symbols/ end=/^LEXICON/       keepend
+syn match       lexcMulticharSymbol /\([^ :;\t]\|%[:; ]\)*/        contains=lexcFlagDiacritic,lexcEscape
+" LEXICON data
+syn region      lexcLexicons    start=/^LEXICON/ end=/^LEXICON/        keepend
 syn match       lexcLexicon     /\([^ ;]*\)\s\+;/       display
-syn match       lexcWord        /^\s*\([^#: %]\(%.\)\?\)\+\(:\([^#:% ]\(%.\)\?\)*\)\?/ display
+syn match       lexcFirstString        /^\s*\([^<: \t%]\|%[:< ]\)*/ contains=lexcEscape,lexcFlagDiacritic
+syn match       lexcSecondString        /:\([^<: \t%]\|%[:< ]\)*/ contains=lexcEscape,lexcFlagDiacritic
 syn region      lexcRegex       start=/</       end=/>/ skip=/%>/       keepend
+syn match       lexcEscape      /%./    contained
+syn match       lexcFlagDiacritic       /@[UPRCDN]\.[a-zA-Z0-9]*\.\?[a-zA-Z0-9]*@/        contained
+syn match       lexcGloss       /"[^"]*"/       contained
+" Legacy end marker...
+syn region      lexcEnded       start=/^END/ end=/\%$/ display
 
 " Comments
 syn keyword	lexcCommentNotes	TODO FIXME XXX	contained
 syn match	lexcCommentInfos	/@\w\+/	contained
-syn match	lexcComment	/!.*/	contains=twolCommentNotes,twolCommentInfos
+syn match	lexcComment	/!.*/	contains=lexcCommentNotes,lexcCommentInfos
 
 " Clusters, regions...
 
 " Highlights
 highlight def link	lexcKeyWords	Keyword
-highlight def link	lexcWord	Character
+highlight def link      lexcKeyWordErrors       Error
+highlight def link	lexcFirstString String
+highlight def link      lexcSecondString        Character
 highlight def link	lexcLexicon	Identifier
+highlight def link      lexcLexiconName Identifier
 highlight def link	lexcRegex	String
+highlight def link      lexcEscape      SpecialChar
+highlight def link      lexcFlagDiacritic       Special
+highlight def link      lexcGloss       Error
 highlight def link	lexcCommentInfos	SpecialComment
 highlight def link	lexcCommentNotes	Todo
 highlight def link	lexcComment	Comment
+highlight def link      lexcEnded       Comment
 
 let b:current_syntax = "xfst-lexc"
 
