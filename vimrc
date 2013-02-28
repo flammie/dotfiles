@@ -11,6 +11,7 @@ set cinoptions=>4,n-2,{2,:2,=2,g0,h2,p5,t0,+2,(0,u0,w1,m1,f2,t0
 set cursorline
 set cursorcolumn
 set hls
+set laststatus=2
 set statusline=%<%f:%l.%c%V\ 0x%B\ %h%m%r%y%=%P
 if has("multi_byte")
     set lcs=tab:␉-,eol:␤,trail:·,nbsp:␣,extends:»,precedes:«
