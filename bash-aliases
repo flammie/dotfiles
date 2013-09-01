@@ -1,19 +1,15 @@
 #!/bin/bash
 alias man='man -a'
-alias diff='diff -Naur'
-# for mac OS X with missing pgrep
-# alias pgrep='ps ax | fgrep'
-# legacy software from xerox
+
 alias pckimmo='LC_ALL=fi_FI LANG=fi_FI luit pckimmo'
-alias twolc='LC_ALL=fi_FI luit twolc'
-alias lexc='LC_ALL=fi_FI luit lexc'
-alias xfst='LC_ALL=fi_FI luit xfst'
 
 alias nisudo='sudo nice'
 
 alias svim='sudo vim'
 
-alias cvs-status='cvs status | grep "^File"'
+alias cd..='cd ..'
+alias cd...='cd ../..'
+alias cd....='cd ../../..'
 
 debugmake() {
 	dbgflags="-g -pg -fno-inline"
