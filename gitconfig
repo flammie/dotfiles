@@ -1,9 +1,11 @@
 [user]
-	name = Flammie Pirinen
-	email = flammie@iki.fi
+    name = Flammie Pirinen
+    email = flammie@iki.fi
 [github]
-	user = flammie
+    user = flammie
 [core]
-	editor = vim
+    editor = vim
 [merge]
-	tool = vimdiff
+    tool = vimdiff
+[color]
+    ui = auto
