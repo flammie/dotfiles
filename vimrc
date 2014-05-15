@@ -20,3 +20,4 @@ else
 endif
 colorscheme inkpot
 filetype plugin indent on
+command W w
