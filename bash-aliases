@@ -11,6 +11,11 @@ alias cd..='cd ..'
 alias cd...='cd ../..'
 alias cd....='cd ../../..'
 
+# apt-cache search is overly eager
+apt-search() {
+    apt-cache search $@ | fgrep $@
+}
+
 debugmake() {
 	dbgflags="-g -pg -fno-inline"
 	CFLAGS="${CFLAGS} ${dbgflags}" CXXFLAGS="${CXXFLAGS} ${dbgflags}" make $@
