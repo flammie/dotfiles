@@ -15,6 +15,9 @@ for d in $HOME/.*  ; do
             echo Above diff will be applied by cp overwrite?
             select a in yes no ; do
                 if test x$a = xyes ; then
+                    if ! test -d $(dirname $dotf) ; then
+                        mkdir -v -p $(dirname $dotf) 
+                    fi
                     cp -v "$f" "$dotf"
                 elif test x$a = xno ; then
                     echo Skipped
