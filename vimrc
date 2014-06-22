@@ -18,6 +18,11 @@ if has("multi_byte")
 else
     set lcs=tab:>-,eol:$,trail:-,nbsp:%,extends:>,precedes:<
 endif
-colorscheme inkpot
+set background=dark
+colorscheme solarized
 filetype plugin indent on
 command W w
+
+let g:po_translator = "Flammie A Pirinen <flammie@iki.fi>"
+let g:po_lang_team = "Lokalisointi-Laatu <laatu@lokalisointi.org>"
+
