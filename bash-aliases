@@ -11,6 +11,8 @@ alias cd..='cd ..'
 alias cd...='cd ../..'
 alias cd....='cd ../../..'
 
+alias diff='diff -u'
+
 # apt-cache search is overly eager
 apt-search() {
     apt-cache search $@ | fgrep $@
