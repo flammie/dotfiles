@@ -13,6 +13,10 @@ alias cd....='cd ../../..'
 
 alias diff='diff -u'
 
+# upstream won't correct locale handling bugs
+alias rrip_gui='LC_ALL=C rrip_gui'
+alias rrip_cli='LC_ALL=C rrip_cli'
+
 # apt-cache search is overly eager
 apt-search() {
     apt-cache search $@ | fgrep $@
