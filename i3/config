@@ -55,9 +55,10 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 bindsym XF86MonBrightnessUp exec xbacklight -inc 7
 bindsym XF86MonBrightnessDown exec xbacklight -dec 7
-bindsym XF86AudioMute exec amixer -D pulse sset Master toggle -q
-bindsym XF86AudioLowerVolume exec amixer -D pulse sset Master 1%- unmute -q
-bindsym XF86AudioRaiseVolume exec amixer -D pulse sset Master 1%+ unmute -q
+bindsym XF86AudioMute exec amixer set Master toggle -q
+bindsym XF86AudioLowerVolume exec amixer set Master 1%- unmute -q
+bindsym XF86AudioRaiseVolume exec amixer set Master 1%+ unmute -q
+bindsym $mod+Shift+z exec --no-startup-id i3-lock-suspend.sh
 mode "resize" {
         bindsym j resize shrink width 10 px or 10 ppt
         bindsym k resize grow height 10 px or 10 ppt
@@ -76,6 +77,4 @@ bar {
 }
 exec --no-startup-id nm-applet
 exec --no-startup-id xset dpms 900
-exec --no-startup-id gnome-settings-daemon
-exec --no-startup-id xautolock -detect-sleep -locker "i3lock -i Kuvat/DCU_Three_Castles.png; dbus-send --system --dest='org.freedesktop.UPower' /org/freedesktop/UPower org.freedesktop.UPower.Suspend"
-
+exec --no-startup-id ~/i3/autostart.sh
