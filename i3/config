@@ -77,5 +77,5 @@ bar {
 exec --no-startup-id nm-applet
 exec --no-startup-id xset dpms 900
 exec --no-startup-id gnome-settings-daemon
-exec --no-startup-id "i3lock -c 300000; dbus-send --system --dest='org.freedesktop.UPower' /org/freedesktop/UPower org.freedesktop.UPower.Suspend"
+exec --no-startup-id xautolock -detect-sleep -locker "i3lock -i Kuvat/DCU_Three_Castles.png; dbus-send --system --dest='org.freedesktop.UPower' /org/freedesktop/UPower org.freedesktop.UPower.Suspend"
 
