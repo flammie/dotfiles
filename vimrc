@@ -9,6 +9,7 @@ set modeline
 set modelines=5
 set cinoptions=>4,n-2,{2,:2,=2,g0,h2,p5,t0,+2,(0,u0,w1,m1,f2,t0
 set cursorline
+set colorcolumn=72,80,100
 set showmatch
 set hls
 set laststatus=2
