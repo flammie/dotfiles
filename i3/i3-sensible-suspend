@@ -1,0 +1,8 @@
+#!/bin/bash
+if type systemctl ; then
+    systemctl suspend
+elif type dbus-send ; then
+    dbus-send --system --dest='org.freedesktop.UPower' /org/freedesktop/UPower org.freedesktop.UPower.Suspend
+fi
+
+
