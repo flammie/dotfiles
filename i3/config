@@ -55,18 +55,12 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 bindsym XF86MonBrightnessUp exec xbacklight -inc 7
 bindsym XF86MonBrightnessDown exec xbacklight -dec 7
-<<<<<<< HEAD
 bindsym XF86AudioMute exec amixer -D pulse sset Master toggle -q
 bindsym XF86AudioLowerVolume exec amixer -D pulse sset Master 1%- unmute -q
 bindsym XF86AudioRaiseVolume exec amixer -D pulse sset Master 1%+ unmute -q
 bindsym Mod1+Tab focus right
 bindsym Mod1+Shift+Tab focus left
-=======
-bindsym XF86AudioMute exec amixer set Master toggle -q
-bindsym XF86AudioLowerVolume exec amixer set Master 1%- unmute -q
-bindsym XF86AudioRaiseVolume exec amixer set Master 1%+ unmute -q
 bindsym $mod+Shift+z exec --no-startup-id i3-lock-suspend.sh
->>>>>>> 9d0bfc0ffe96941b6a4b54031cf3c8b78038b673
 mode "resize" {
         bindsym j resize shrink width 10 px or 10 ppt
         bindsym k resize grow height 10 px or 10 ppt
