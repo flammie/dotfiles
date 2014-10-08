@@ -58,6 +58,8 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 7
 bindsym XF86AudioMute exec amixer -D pulse sset Master toggle -q
 bindsym XF86AudioLowerVolume exec amixer -D pulse sset Master 1%- unmute -q
 bindsym XF86AudioRaiseVolume exec amixer -D pulse sset Master 1%+ unmute -q
+bindsym Mod1+Tab focus right
+bindsym Mod1+Shift+Tab focus left
 mode "resize" {
         bindsym j resize shrink width 10 px or 10 ppt
         bindsym k resize grow height 10 px or 10 ppt
@@ -75,7 +77,7 @@ bar {
         status_command i3status
 }
 exec --no-startup-id nm-applet
-exec --no-startup-id xset dpms 900
+exec --no-startup-id xset dpms 900 1200 1800
 exec --no-startup-id gnome-settings-daemon
-exec --no-startup-id xautolock -detect-sleep -locker "i3lock -i Kuvat/DCU_Three_Castles.png; dbus-send --system --dest='org.freedesktop.UPower' /org/freedesktop/UPower org.freedesktop.UPower.Suspend"
+exec --no-startup-id xautolock -detectsleep -locker "i3lock -i Kuvat/DCU_Three_Castles.png; dbus-send --system --dest='org.freedesktop.UPower' /org/freedesktop/UPower org.freedesktop.UPower.Suspend"
 
