@@ -8,7 +8,7 @@ fi
 GPGAGENT=/usr/bin/gpg-agent
 GPGAGENTARS="--daemon"
 if [ -z "$GPG_AGENT_INFO" -a -x "$GPGAGENT" ] ; then
-    eval "$GPGAGENT0 $GPGAGENTARGS"
+    eval "$GPGAGENT $GPGAGENTARGS"
 fi
 # this is common env for all sessions
 . .profile-env
