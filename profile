@@ -1,3 +1,4 @@
+# agents are needed for shell and x sessions all
 SSHAGENT=/usr/bin/ssh-agent
 SSHAGENTARGS="-s"
 if [ -z "$SSH_AUTH_SOCK" -a -x "$SSHAGENT" ]; then
@@ -9,4 +10,5 @@ GPGAGENTARS="--daemon"
 if [ -z "$GPG_AGENT_INFO" -a -x "$GPGAGENT" ] ; then
     eval "$GPGAGENT0 $GPGAGENTARGS"
 fi
-
+# this is common env for all sessions
+. .profile-env
