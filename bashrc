@@ -9,6 +9,8 @@ fi
 # sources /etc/bash.bashrc).
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
+elif [ -f /usr/share/bash-completion/bash_completion ] ; then
+    . /usr/share/bash-completion/bash_completion
 fi
 
 case ${TERM} in
@@ -46,4 +48,3 @@ fi
 
 
 source ${HOME}/.bash-aliases
-source ${HOME}/.bash-env
