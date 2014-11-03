@@ -27,8 +27,21 @@ debugmake() {
 	CFLAGS="${CFLAGS} ${dbgflags}" CXXFLAGS="${CXXFLAGS} ${dbgflags}" make $@
 }
 
+remake() {
+    if test -f $1 ; then
+        rm -v -f $1
+    elif test -d $1 ; then
+        rm -v -rf $1
+    fi
+    make $1
+}
+
 backup() {
-	mv $1 $1~
+	cp -v $1 $1~
+}
+
+frontdown() {
+    cp -v $1~ $1
 }
 
 eskel() {
