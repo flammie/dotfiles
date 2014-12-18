@@ -9,3 +9,4 @@ video/quicktime=vlc.desktop
 
 [Added Associations]
 x-scheme-handler/mailto=claws-mail.desktop;
+video/x-ms-wmv=vlc.desktop;
