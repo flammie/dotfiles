@@ -1,6 +1,7 @@
 [user]
     name = Flammie Pirinen
     email = flammie@iki.fi
+	signingkey = 0xB55C73B38C4B9642!
 [github]
     user = flammie
 [core]
