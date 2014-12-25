@@ -27,3 +27,5 @@ command W w
 let g:po_translator = "Flammie A Pirinen <flammie@iki.fi>"
 let g:po_lang_team = "Lokalisointi-Laatu <laatu@lokalisointi.org>"
 
+:autocmd FileType * unlet! b:browsefilter
+
