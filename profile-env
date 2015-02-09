@@ -8,6 +8,5 @@ export LANGUAGE=fi:en:sv:fr:hu:et:C
 export LC_ALL=fi_FI.UTF-8
 export PATH=/opt/local/bin/:${HOME}/bin/:${PATH}
 export YFLAGS=-v
-export GREP_OPTIONS="--colour=auto"
 export ECHANGELOG_USER="Flammie Pirinen <flammie@gentoo.org>"
 export GTCORE=$HOME/Koodit/gtcore/
