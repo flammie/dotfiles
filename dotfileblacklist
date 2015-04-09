@@ -2,7 +2,12 @@
 ..
 .cache
 .android
+.AndroidStudio
+.AndroidStudio~
+.AndroidStudioBeta
+.AndroidStudioBeta~
 .AndroidStudioPreview
+.AndroidStudioPreview~
 .claws-mail
 .compiz
 .chromium
@@ -16,6 +21,7 @@
 .dropbox-master
 .gradle
 .gconf
+.ivy2
 .macromedia
 .opera
 .pulse
