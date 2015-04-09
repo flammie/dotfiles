@@ -22,6 +22,8 @@ endif
 set background=dark
 colorscheme solarized
 filetype plugin indent on
+syntax sync minlines=256
+set synmaxcol=128
 command W w
 
 let g:po_translator = "Flammie A Pirinen <flammie@iki.fi>"
