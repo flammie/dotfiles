@@ -1,2 +1,3 @@
 application/pdf; evince '%s'
 application/rtf; abiword '%s'
+application/vnd.openxmlformats-officedocument.spreadsheetml.sheet; gnumeric '%s'
