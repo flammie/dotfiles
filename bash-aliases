@@ -21,6 +21,9 @@ alias egrep='egrep --colour=auto'
 alias rrip_gui='LC_ALL=C rrip_gui'
 alias rrip_cli='LC_ALL=C rrip_cli'
 
+# programmer's sort
+alias csort='LC_ALL=C sort'
+
 # apt-cache search is overly eager
 apt-search() {
     apt-cache search $@ | fgrep $@
