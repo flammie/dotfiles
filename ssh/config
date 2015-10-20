@@ -1,0 +1,36 @@
+NumberOfPasswordPrompts 1
+
+Host *
+    ForwardX11 yes
+    ForwardAgent yes
+    ServerAliveInterval 30
+Host ruuvi
+    ForwardX11Trusted yes
+    Hostname ruuvi.helsinki.fi
+Host myntti
+    Hostname myntti.helsinki.fi
+Host kruuna
+    Hostname kruuna.helsinki.fi
+Host flammie
+    ForwardX11Trusted yes
+    Hostname flammie.dyndns.org
+Host hippu
+    ForwardX11Trusted yes
+    Hostname hippu.csc.fi
+Host taito
+    ForwardX11Trusted yes
+    Hostname taito.csc.fi
+Host taito-shell
+    ForwardX11Trusted yes
+    Hostname taito-shell.csc.fi
+Host corona
+    Hostname corona.csc.fi
+Host abumatran
+    Hostname abumatran.eu
+Host dcu-gateway
+    Hostname gateway.computing.dcu.ie
+Host demo-cngl
+    ProxyCommand ssh -W %h:%p dcu-gateway
+    Hostname demo-cngl.computing.dcu.ie
+Host ilazki
+    Hostname ilazki.thinkgeek.co.uk
