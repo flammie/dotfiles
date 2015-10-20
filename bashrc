@@ -1,9 +1,5 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
 
-if test -r /etc/profile.d/bash-completion.sh ; then
-    source /etc/profile.d/bash-completion.sh
-fi
-
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
