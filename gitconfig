@@ -10,3 +10,5 @@
     tool = vimdiff
 [color]
     ui = auto
+[http]
+	postBuffer = 242880000
