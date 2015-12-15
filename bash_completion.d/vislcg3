@@ -1,0 +1,324 @@
+# -*- mode: shell-script; sh-basic-offset: 4; indent-tabs-mode: nil -*-
+#
+# vislcg3 completion
+# by Kevin Brubeck Unhammer <unhammer@fsfe.org>
+# Licence: GNU GPL v2
+
+_vislcg3()
+{
+    local cur prev
+
+    local shortoptions='
+-h
+-?
+-V
+-g
+-u
+-s
+-d
+-v
+-2
+-I
+-O
+-E
+-C
+-L
+-t
+-S
+-Z
+-z
+-p
+-D
+-o
+-e
+'
+
+    local longoptions='
+--help
+--?
+--version
+--grammar
+--grammar-out
+--grammar-bin
+--grammar-only
+--ordered
+--unsafe
+--sections
+--rules
+--rule
+--debug
+--verbose
+--vislcg-compat
+--stdin
+--stdout
+--stderr
+--codepage-all
+--codepage-grammar
+--codepage-input
+--codepage-output
+--locale-all
+--locale-grammar
+--locale-input
+--locale-output
+--no-mappings
+--no-corrections
+--no-before-sections
+--no-sections
+--no-after-sections
+--trace
+--trace-name-only
+--trace-no-removed
+--trace-encl
+--single-run
+--max-runs
+--statistics
+--optimize-unsafe
+--optimize-safe
+--prefix
+--unicode-tags
+--num-windows
+--always-span
+--soft-limit
+--hard-limit
+--dep-delimit
+--dep-humanize
+--dep-original
+--dep-allow-loops
+--dep-no-crossing
+--no-magic-readings
+--no-pass-origin
+--show-end-tags
+--show-unused-sets
+--show-tag-hashes
+--show-set-hashes
+'
+
+    COMPREPLY=()
+    cur=$(_get_cword)
+    prev=${COMP_WORDS[COMP_CWORD-1]}
+
+    case "$prev" in
+        -g | --grammar)
+            _filedir cg3
+            _filedir cg3b
+            ;;
+        --grammar-out)
+            _filedir cg3
+            ;;
+        --grammar-bin)
+            _filedir cg3b
+            ;;
+        -s | --sections)
+            # number or ranges of sections to run; defaults to all sections
+            ;;
+        --rules)
+            # number or ranges of rules to run; defaults to all rules
+            ;;
+        --rule)
+            # a name or number of a single rule to run
+            ;;
+        -I | --stdin)
+            _filedir
+            ;;
+        -O | --stdout)
+            _filedir
+            ;;
+        -E | --stderr)
+            _filedir
+            ;;
+        -C | --codepage-all)
+            # codepage to use for grammar, input, and output streams; defaults to environment settings
+            ;;
+        --codepage-grammar)
+            # codepage to use for grammar; overrides --codepage-all
+            ;;
+        --codepage-input)
+            # codepage to use for input; overrides --codepage-all
+            ;;
+        --codepage-output)
+            # codepage to use for output and errors; overrides --codepage-all
+            ;;
+        -L | --locale-all)
+            COMPREPLY=( $( compgen -W "$(locale -a)" -- $cur ) )
+            ;;
+        --locale-grammar)
+            COMPREPLY=( $( compgen -W "$(locale -a)" -- $cur ) )
+            ;;
+        --locale-input)
+            COMPREPLY=( $( compgen -W "$(locale -a)" -- $cur ) )
+            ;;
+        --locale-output)
+            COMPREPLY=( $( compgen -W "$(locale -a)" -- $cur ) )
+            ;;
+        --max-runs)
+            # runs each section max N times; defaults to unlimited (0)
+            ;;
+        -p | --prefix)
+            # sets the mapping prefix; defaults to @
+            ;;
+        --num-windows)
+            # number of windows to keep in before/ahead buffers; defaults to 2
+            ;;
+        --soft-limit)
+            # number of cohorts after which the SOFT-DELIMITERS kick in; defaults to 300
+            ;;
+        --hard-limit)
+            # number of cohorts after which the window is forcefully cut; defaults to 500
+            ;;
+        -D | --dep-delimit)
+            # delimit windows based on dependency instead of DELIMITERS; defaults to 10
+            ;;
+        *)
+            case "$cur" in
+                --*) COMPREPLY=( $( compgen -W "$longoptions" -- $cur ) ) ;;
+                -*) COMPREPLY=( $( compgen -W "$shortoptions" -- $cur ) ) ;;
+                *) _filedir
+            esac
+            ;;
+    esac
+
+    return 0
+}
+complete -F _vislcg3 $filenames vislcg3
+
+_cg_comp()
+{
+    local cur prev
+
+    COMPREPLY=()
+    cur=$(_get_cword)
+    prev=${COMP_WORDS[COMP_CWORD-1]}
+
+    case "$COMP_CWORD" in
+        1)
+            _filedir cg3
+            _filedir rlx
+            ;;
+        2)
+            _filedir cg3b
+            _filedir rlx.bin
+            ;;
+        *)
+            _filedir
+            ;;
+    esac
+
+    return 0
+}
+complete -F _cg_comp $filenames cg-comp
+
+_cg_proc()
+{
+    local cur prev
+
+    local shortoptions='
+-d
+-s
+-f
+-r
+-t
+-w
+-n
+-1
+-z
+-v
+-h
+'
+
+    COMPREPLY=()
+    cur=$(_get_cword)
+    prev=${COMP_WORDS[COMP_CWORD-1]}
+
+    args=1
+    for i in "${COMP_WORDS[@]:1:COMP_CWORD-1}"; do
+        # like _count_args, but skip 0 and 1 (args to -f option)
+        case "$i" in
+            -* | 0 | 1) ;;
+            *) ((args++)) ;;
+        esac
+    done
+
+    case "$prev" in
+        -f)
+            COMPREPLY=(0 1)
+            ;;
+        *)
+            case "$cur" in
+                -*)
+                    COMPREPLY=( $( compgen -W "$shortoptions" -- $cur ) )
+                    ;;
+                *)
+                    case "$args" in
+                        1)
+                            _filedir cg3b
+                            _filedir rlx.bin
+                            ;;
+                        *)
+                            _filedir
+                    esac
+                    ;;
+            esac
+            ;;
+    esac
+
+    return 0
+}
+complete -F _cg_proc $filenames cg-proc
+
+
+_cg_conv()
+{
+    local cur prev
+
+    local shortoptions='
+-h
+-?
+-p
+-u
+-v
+-n
+-a
+-m
+-f
+-p
+-r
+-l
+'
+    local longoptions='
+--help
+--?
+--prefix
+--in-auto
+--in-cg
+--in-niceline
+--in-apertium
+--in-matxin
+--in-fst
+--in-plain
+--out-cg
+--out-apertium
+--out-matxin
+--rtl
+--ltr
+'
+
+    COMPREPLY=()
+    cur=$(_get_cword)
+    prev=${COMP_WORDS[COMP_CWORD-1]}
+
+    case "$prev" in
+        -p | --prefix)
+            # sets the mapping prefix; defaults to @
+            ;;
+        *)
+            case "$cur" in
+                --*) COMPREPLY=( $( compgen -W "$longoptions" -- $cur ) ) ;;
+                -*) COMPREPLY=( $( compgen -W "$shortoptions" -- $cur ) ) ;;
+                *) _filedir
+            esac
+            ;;
+    esac
+
+    return 0
+}
+complete -F _cg_conv $filenames cg-conv

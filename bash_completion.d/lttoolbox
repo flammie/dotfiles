@@ -1,0 +1,81 @@
+# -*- mode: shell-script; sh-basic-offset: 4; indent-tabs-mode: nil -*-
+#
+# lttoolbox and lttoolbox-java completion 
+# by Kevin Brubeck Unhammer <unhammer@fsfe.org>
+# Licence: GNU GPL v2
+
+_ltproc() 
+{
+    local cur
+
+    COMPREPLY=()
+    cur=`_get_cword`
+
+    case "$cur" in
+        -*)
+        COMPREPLY=( $( compgen -W '-a -c -g -n -d -p -s -t -z -w \
+        -v -h --analysis --case-sensitive --generation --non-marked-gen \
+        --debugged-gen --post-generation --sao --transliteration \
+        --null-flush --dictionary-case --version --help' -- $cur ) )
+        ;;
+        *)
+        _filedir bin
+        ;;
+    esac
+  
+    return 0
+}
+complete -F _ltproc $filenames lt-proc
+complete -F _ltproc $filenames lt-proc-j
+
+_ltcomp() 
+{
+    local cur
+
+    COMPREPLY=()
+    cur=`_get_cword`
+
+    case "$cur" in
+        *)
+        if [ $COMP_CWORD -eq 1 ]; then
+            COMPREPLY=( $( compgen -W 'lr rl' -- $cur ) )
+        elif [ $COMP_CWORD -eq 2 ]; then
+            _filedir '@(xml|dix)'
+        elif [ $COMP_CWORD -eq 3 ]; then
+        # of course, we _could_ only remove automorf.bin or
+        # autogen.bin depending on lr and rl, or even find
+        # nn-nb/nb-nn directions from that... but who calls
+        # lt-comp manually anyway?
+            _filedir bin
+        fi
+        # no reason to offer more arguments than this, right? 
+        ;;
+    esac
+  
+    return 0
+}
+complete -F _ltcomp $filenames lt-comp
+complete -F _ltcomp $filenames lt-comp-j
+
+_ltexpand() 
+{
+    local cur
+
+    COMPREPLY=()
+    cur=`_get_cword`
+
+    case "$cur" in
+        *)
+        if [ $COMP_CWORD -eq 1 ]; then
+            _filedir '@(xml|dix)'
+        elif [ $COMP_CWORD -eq 2 ]; then
+            _filedir bin
+        fi
+        # no reason to offer more arguments than this, right? 
+        ;;
+    esac
+  
+    return 0
+}
+complete -F _ltexpand $filenames lt-expand
+complete -F _ltexpand $filenames lt-expand-j

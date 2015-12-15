@@ -1,0 +1,43 @@
+# -*- mode: shell-script; sh-basic-offset: 4; indent-tabs-mode: nil -*-
+#
+# hfst completion
+# by Kevin Brubeck Unhammer <unhammer@fsfe.org>
+# Licence: GNU GPL v2
+
+# TODO: the rest of the hfst applications, and use $prev in _hfst-lookup
+
+_hfst-lookup() 
+{
+    local cur
+
+    COMPREPLY=()
+    cur=`_get_cword`
+
+    case "$cur" in
+        -*)
+            COMPREPLY=( $( compgen -W '-h --help \
+  -V --version \
+  -v --verbose \
+  -q --quiet \
+  -s --silent \
+  -i --input \
+  -o --output \
+  -R --read-symbols \
+  -D --do-not-write-symbols \
+  -W --write-symbols-to \
+  -I --input-strings \
+  -S --spaces \
+  -f --format \
+  -r --statistics' -- $cur ) )
+            ;;
+        
+
+
+        *)
+            _filedir hfst
+            ;;
+    esac
+    
+    return 0
+}
+complete -F _hfst-lookup $filenames hfst-lookup

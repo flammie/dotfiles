@@ -1,0 +1,205 @@
+# -*- mode: shell-script; sh-basic-offset: 4; indent-tabs-mode: nil -*-
+#
+# apertium completion
+# by Kevin Brubeck Unhammer <unhammer@fsfe.org>
+# Licence: GNU GPL v2
+
+_apertium() 
+{
+    local cur prev
+
+    COMPREPLY=()
+    cur=$(_get_cword)
+    prev=${COMP_WORDS[COMP_CWORD-1]}
+
+    case "$prev" in
+        -d)
+            _filedir -d         # TODO: include . in suggestions?
+            ;;
+        -m)
+            _filedir tmx
+            ;;
+        -f)
+            COMPREPLY=( $( compgen -W 'txt html html-noent rtf odt docx wxml \
+        xlsx pptx xpresstag mediawiki' -- $cur ) )
+            ;;
+        -o)
+            COMPREPLY=( $( compgen -W "$(eval apertium -l)" -- $cur ) )
+            ;;
+        *)
+            case "$cur" in
+                -*)
+                    COMPREPLY=( $( compgen -W '-d -f -a -u -m -o -l' -- $cur ) )
+                    ;;
+                *)
+                    # Suggest either translation mode or input/output file
+
+                    local modesdir=""
+                    for (( i=0; i < ${#COMP_WORDS[@]}-1; i++ )); do
+                        if [[ "${COMP_WORDS[i-1]}" = -d ]]; then
+                            modesdir="${COMP_WORDS[i]}"
+                        fi
+                    done
+                    if [[ -z "${modesdir}" ]]; then
+                        local apertium_path=$(command -v apertium)
+                        local prefix=${apertium_path%%/bin/apertium}
+                        modesdir=${prefix}/share/apertium
+                    fi
+
+                    declare -a modes
+                    modes=("${modesdir}"/modes/*.mode)
+                    modes=("${modes[@]%%.mode}")
+                    modes=("${modes[@]##*/}")
+
+                    local mode_is_set=false
+                    if [[ -n "${modes[@]}" ]]; then
+                        # If we've set a mode already, we just want to
+                        # suggest input/output files instead
+                        for (( i=0; i < ${#COMP_WORDS[@]}-1; i++ )); do
+                            # ignore -o-prefixed language code
+                            if [[ "${COMP_WORDS[i-1]}" != "-o" ]]; then
+                                for m in "${modes[@]}"; do
+                                    [[ "$m" = "${COMP_WORDS[i]}" ]] && mode_is_set=true; 
+                                done
+                            fi
+                        done
+                        if $mode_is_set; then
+                            _filedir
+                        else
+                            local m=$(printf "%s\n" "${modes[@]}") # TODO: why is this needed?
+                            COMPREPLY=( $( compgen -W "$m" -- $cur ) )
+                        fi
+                    else
+                        _filedir
+                    fi
+                    ;;
+            esac
+            ;;
+    esac
+    
+    return 0
+}
+complete -F _apertium $filenames apertium
+complete -F _apertium $filenames apertium-j
+
+_apertium_transfer() 
+{
+    local cur prev
+
+    COMPREPLY=()
+    cur=$(_get_cword)
+    first=${COMP_WORDS[1]}    # TODO go through all dash-options
+
+    case "$first" in
+        -b)
+        if [ $COMP_CWORD -eq 2 ]; then
+            _filedir t1x
+        elif [ $COMP_CWORD -eq 3 ]; then
+            _filedir t1x.bin
+        else
+            _filedir
+        fi
+        ;;
+        *)
+        if [ $COMP_CWORD -eq 1 ]; then
+            _filedir t1x
+        elif [ $COMP_CWORD -eq 2 ]; then
+            _filedir t1x.bin
+        elif [ $COMP_CWORD -eq 3 ]; then
+            _filedir autobil.bin
+        else
+            _filedir
+        fi
+        ;;
+    esac
+  
+    return 0
+}
+complete -F _apertium_transfer $filenames apertium-transfer
+complete -F _apertium_transfer $filenames apertium-transfer-j
+
+_apertium_interchunk() 
+{
+    local cur
+
+    COMPREPLY=()
+    cur=$(_get_cword)
+
+    case "$cur" in
+        *)
+        if [ $COMP_CWORD -eq 1 ]; then
+            _filedir t2x
+        elif [ $COMP_CWORD -eq 2 ]; then
+            _filedir t2x.bin
+        else
+            _filedir
+        fi
+        ;;
+    esac
+  
+    return 0
+}
+complete -F _apertium_transfer $filenames apertium-interchunk
+complete -F _apertium_transfer $filenames apertium-interchunk-j
+
+_apertium_postchunk() 
+{
+    local cur
+
+    COMPREPLY=()
+    cur=$(_get_cword)
+
+    case "$cur" in
+        *)
+        if [ $COMP_CWORD -eq 1 ]; then
+            _filedir t3x
+        elif [ $COMP_CWORD -eq 2 ]; then
+            _filedir t3x.bin
+        else
+            _filedir
+        fi
+        ;;
+    esac
+  
+    return 0
+}
+complete -F _apertium_transfer $filenames apertium-postchunk
+complete -F _apertium_transfer $filenames apertium-postchunk-j
+
+_apertium_autogen() 
+{
+    local cur
+
+    COMPREPLY=()
+    cur=$(_get_cword)
+
+    case "$cur" in
+        -*)
+            if grep -q -s 'AP_CHECK_LING(' configure.ac; then
+                dirs=$(
+                    awk -F'[][]' '/^ *AP_CHECK_LING\(/ && $2 && $4 {print $2, $4}' configure.ac |
+                    while read -r n d; do
+                        if [[ -d "../$d" ]]; then
+                            echo "--with-lang$n=../$d"
+                        elif [[ -d "../../languages/$d" ]]; then
+                            echo "--with-lang$n=../../languages/$d"
+                        elif [[ -n $GTCORE && $d = giella-* && -d "$GTCORE/../langs/${d##giella-}/tools/mt/apertium" ]]; then
+                            echo "--with-lang$n=$GTCORE/../langs/${d##giella-}/tools/mt/apertium"
+                        else
+                            echo "--with-lang$n=/PATH/TO/$d"
+                        fi
+                    done
+                )
+                COMPREPLY=( $( compgen -W "$dirs" -- $cur ) )
+            else
+                _filedir
+            fi
+            ;;
+        *)
+            _filedir
+            ;;
+    esac
+    
+    return 0
+}
+complete -F _apertium_autogen $filenames autogen.sh
