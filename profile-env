@@ -1,5 +1,5 @@
 export EDITOR=vim
-export TERMINAL=lxterminal
+export TERMINAL=gnome-terminal
 export CPATH=/opt/local/include:/usr/local/include:/usr/include
 export PKG_CONFIG_PATH=/opt/local/lib/pkgconfig:/opt/local/share/pkgconfig:/usr/local/lib/pkgconfig:/usr/local/share/pkgconfig:$HOME/lib/pkgconfig:$HOME/share/pkgconfig
 export CFLAGS="-O2 -march=native -ggdb -Wall -Wextra "
