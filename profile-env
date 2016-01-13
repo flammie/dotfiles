@@ -10,3 +10,4 @@ export PATH=/opt/local/bin/:${HOME}/bin/:${PATH}
 export YFLAGS=-v
 export ECHANGELOG_USER="Flammie Pirinen <flammie@gentoo.org>"
 export GTCORE=$HOME/Koodit/gtcore/
+export MAILER=claws-mail
