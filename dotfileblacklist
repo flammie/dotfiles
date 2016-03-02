@@ -23,6 +23,7 @@
 .gradle
 .ivy2
 .local
+.mozilla
 .macromedia
 .opera
 .pulse
