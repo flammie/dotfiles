@@ -1,3 +1,4 @@
+execute pathogen#infect()
 set so=1
 set ts=4
 set shiftwidth=4
