@@ -27,6 +27,9 @@ syntax sync minlines=256
 set synmaxcol=128
 command W w
 
+highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+match OverLength /\%81v.\+/
+
 let g:po_translator = "Flammie A Pirinen <flammie@iki.fi>"
 let g:po_lang_team = "Lokalisointi-Laatu <laatu@lokalisointi.org>"
 
