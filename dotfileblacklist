@@ -20,9 +20,11 @@
 .dropbox-master
 .fontconfig
 .gconf
+.gnupg
 .gradle
 .ivy2
 .local
+.m2
 .mozilla
 .macromedia
 .opera
