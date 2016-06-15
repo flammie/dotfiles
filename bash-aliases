@@ -24,6 +24,10 @@ alias rrip_cli='LC_ALL=C rrip_cli'
 # programmer's sort
 alias csort='LC_ALL=C sort'
 
+# vim less
+alias vähemmän='/usr/share/vim/vim??/macros/less.sh'
+alias vless='/usr/share/vim/vim??/macros/less.sh'
+
 # apt-cache search is overly eager
 apt-search() {
     apt-cache search $@ | fgrep $@
