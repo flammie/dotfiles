@@ -5,8 +5,14 @@ insert_final_newline = true
 charset = utf-8
 trim_trailing_whitespace = true
 
+# I prefer to limit all my code at 80 character cells
+[*.{c,cc,cpp,h,hh,java,py}]
+max_line_length = 80
+
+# vim commits have known limit of 72 characters per line
 [COMMIT_EDITMSG]
 max_line_length = 72
 
-[*.{c,cc,cpp,h,hh,java,py}]
-max_line_length = 80
+# for XML I have indent of 2 always
+[*.{xml,pom,dix,t1x,t2x,t3x,lrx,rlx}]
+indent_size = 2
