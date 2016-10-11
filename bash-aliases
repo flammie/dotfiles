@@ -69,4 +69,17 @@ eskel() {
 etest() {
 	ebuild $1 unpack && ebuild $1 compile && ebuild $1 install
 }
-# vim: set ft=sh
+
+grepless() {
+    fgrep --colour=always $@ | less -R
+}
+
+egrepless() {
+    fgrep --colour=always $@ | less -R
+}
+
+fgrepless() {
+    fgrep --colour=always $@ | less -R
+}
+
+# vim: set ft=bash
