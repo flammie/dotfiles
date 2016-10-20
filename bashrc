@@ -45,3 +45,10 @@ fi
 
 source ${HOME}/.bash-aliases
 source ${HOME}/.bash-env
+
+if test -n "$SSH_CONNECTION" ; then
+    SHOWHOST=$(echo $SSH_CONNECTION | cut -d ' ' -f 1 | sed -e 's/...$/.../')
+else
+    SHOWHOST=localhost
+fi
+export PS1="${PS1/\\h/\\[\\033[01;37m\\]${SHOWHOST}->\\[\\033[01;33m\\]\\h}"
