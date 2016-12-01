@@ -11,7 +11,7 @@ alias cd..='cd ..'
 alias cd...='cd ../..'
 alias cd....='cd ../../..'
 
-alias diff='diff -u'
+alias diff='colordiff -u'
 
 alias grep='grep --colour=auto'
 alias fgrep='fgrep --colour=auto'
