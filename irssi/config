@@ -1,12 +1,12 @@
 servers = (
   { address = "irc.efnet.net"; chatnet = "EFNet"; port = "6667"; },
-  { 
+  {
     address = "irc.undernet.org";
     chatnet = "Undernet";
     port = "6667";
   },
   { address = "irc.dal.net"; chatnet = "DALnet"; port = "6667"; },
-  { 
+  {
     address = "irc.quakenet.org";
     chatnet = "QuakeNet";
     port = "6667";
@@ -48,6 +48,14 @@ servers = (
     use_ssl = "yes";
     ssl_verify = "yes";
     ssl_capath = "/etc/ssl/certs";
+  },
+  {
+    address = "localhost";
+    chatnet = "bitlbee";
+    port = "6667";
+    use_ssl = "no";
+    ssl_verify = "no";
+    autoconnect = "yes";
   }
 );
 
@@ -59,7 +67,7 @@ chatnets = {
     max_whois = "4";
     max_query_chans = "5";
   };
-  EFNet = { 
+  EFNet = {
     type = "IRC";
     max_kicks = "4";
     max_msgs = "3";
@@ -84,10 +92,8 @@ chatnets = {
     max_whois = "30";
   };
   SILC = { type = "SILC"; };
-  Freenode = {
-    type = "IRC";
-    nick = "Flammie";
-  };
+  Freenode = { type = "IRC"; nick = "Flammie"; };
+  bitlbee = { type = "IRC"; };
 };
 
 channels = (
@@ -96,16 +102,14 @@ channels = (
   { name = "&flammie"; chatnet = "ircnet"; autojoin = "yes"; },
   { name = "#lokalisointi"; chatnet = "ircnet"; autojoin = "yes"; },
   { name = "#hyrmy"; chatnet = "IRCnet"; autojoin = "yes"; },
-  { name = "#gentoo.FI"; chatnet = "ircnet"; autojoin = "no"; },
-  { name = "#gentoo-commits"; chatnet = "FreeNode"; autojoin = "no"; },
-  { name = "#gentoo-dev"; chatnet = "FreeNode"; autojoin = "yes"; },
-  { name = "#gentoo-doc"; chatnet = "FreeNode"; autojoin = "yes"; },
   { name = "#hfst"; chatnet = "FreeNode"; autojoin = "yes"; },
   { name = "#apertium"; chatnet = "FreeNode"; autojoin = "yes"; },
   { name = "#aspekti"; chatnet = "IRCnet"; autojoin = "yes"; },
   { name = "#gentoo-science"; chatnet = "FreeNode"; autojoin = "yes"; },
   { name = "#omorfi"; chatnet = "Freenode"; autojoin = "yes"; },
   { name = "#gf"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "#_u-dep"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "#acl-sigur"; chatnet = "freenode"; autojoin = "yes"; },
   { name = "!morfessor"; chatnet = "IRCNet"; }
 );
 
@@ -279,8 +283,9 @@ settings = {
   "fe-common/core" = {
     autolog = "yes";
     autolog_level = "ALL -CRAP -CLCRAP -CTCPS";
-    activity_hide_level = "PARTS JOINS QUITS OPS RENAMES VOICES DEOPS MODES";
-    theme = "easyeye";
+    activity_hide_level = "QUITS JOINS PARTS KICKS MODES TOPIC NICKS";
+    theme = "solarized-universal";
+    activity_hide_targets = "&bitlbee";
   };
   "irc/core" = {
     alternate_nick = "ffFlammie";
@@ -307,4 +312,7 @@ hilights = (
     channels = ( "#omorfi" );
   }
 );
-ignores = ( { mask = "Ruhtinas"; level = "ALL"; } );
+ignores = (
+  { mask = "Ruhtinas"; level = "ALL"; },
+  { level = "JOINS PARTS QUITS MODES NICKS"; }
+);
