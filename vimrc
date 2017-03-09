@@ -1,4 +1,3 @@
-execute pathogen#infect()
 set so=1
 set ts=4
 set shiftwidth=4
@@ -26,6 +25,8 @@ filetype plugin indent on
 syntax sync minlines=256
 set synmaxcol=128
 command W w
+command Wq wq
+map u <Nop>
 
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 match OverLength /\%81v.\+/
