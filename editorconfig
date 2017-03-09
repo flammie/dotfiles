@@ -6,7 +6,7 @@ charset = utf-8
 trim_trailing_whitespace = true
 
 # I prefer to limit all my code at 80 character cells
-[*.{c,cc,cpp,h,hh,java,py}]
+[*.{c,cc,cpp,h,hh,java,py,bash,sh,tex,md,markdown}]
 max_line_length = 80
 
 # vim commits have known limit of 72 characters per line
