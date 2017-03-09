@@ -17,20 +17,37 @@ Host flammie
 Host hippu
     ForwardX11Trusted yes
     Hostname hippu.csc.fi
-Host taito
-    ForwardX11Trusted yes
-    Hostname taito.csc.fi
 Host taito-shell
     ForwardX11Trusted yes
     Hostname taito-shell.csc.fi
+Host taito
+    ForwardX11Trusted yes
+    Hostname taito.csc.fi
 Host corona
     Hostname corona.csc.fi
+Host divvun
+    Hostname divvun.no
+Host victorio
+    Hostname victorio.uit.no
+Host gtweb
+    Hostname gtweb.uit.no
 Host abumatran
     Hostname abumatran.eu
 Host dcu-gateway
     Hostname gateway.computing.dcu.ie
 Host demo-cngl
-    ProxyCommand ssh -W %h:%p dcu-gateway
     Hostname demo-cngl.computing.dcu.ie
+Host corpora
+    Hostname corpora.uni-hamburg.de
+Host annis
+    Hostname annis.corpora.uni-hamburg.de
+Host sandbox
+    Hostname sandbox.multilingua.uni-hamburg.de
 Host ilazki
     Hostname ilazki.thinkgeek.co.uk
+Host clarin-helpdesk
+    Hostname fsd-cloud33.zam.kfa-juelich.de
+Host clarin-helpdesk-neu
+    Hostname fsd-cloud55.zam.kfa-juelich.de
+Host myvps
+    Hostname 30197.s.t4vps.eu
