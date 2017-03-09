@@ -1,0 +1,6 @@
+.ifexists module-ladspa-sink.so
+.nofail
+load-module module-ladspa-sink <options>
+.fail
+.endif
+
