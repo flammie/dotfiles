@@ -7,6 +7,7 @@ required_score		5
 bayes_journal_max_size 102400
 bayes_auto_expire 1
 
+
 # Rescoring rules:
 ## header quirks
 score INVALID_DATE 3.3
@@ -18,6 +19,7 @@ score MIME_HEADER_CTYPE_ONLY 1.0
 score RATWARE_MS_HASH 3.3
 score NO_REAL_NAME 1.3
 score RCVD_ILLEGAL_IP 3.3
+score MISSING_MID 1.0
 ## content syntax
 score HTML_MESSAGE 1.5
 score UPPERCASE_25_50 0.5
@@ -29,8 +31,10 @@ score HTML_IMAGE_ONLY_12 2.8
 score HTML_IMAGE_ONLY_16 2.6
 score HTML_IMAGE_ONLY_28 2.4
 score HTML_IMAGE_ONLY_32 2.2
+score HTML_IMAGE_RATIO_06 1.2
 score HTML_FONT_SIZE_LARGE 1.0
 score HTML_FONT_FACE_BAD 2.5
+score HTML_FONT_LOW_CONTRAST 1.0
 score REPTO_OVERQUOTE_THEBAT 3.3
 score UNRESOLVED_TEMPLATE 3.0
 score NORMAL_HTTP_TO_IP 1.0
