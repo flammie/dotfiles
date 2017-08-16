@@ -1,3 +1,16 @@
+" Vundle START
+set nocompatible
+filetype off
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" Vundle END
+"
+" my setup
 set so=1
 set ts=4
 set shiftwidth=4
@@ -28,11 +41,14 @@ command W w
 command Wq wq
 map u <Nop>
 
+" always highlight overlong lines as error!
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 match OverLength /\%81v.\+/
 
+" po.vim setup (me, Finnish team)
 let g:po_translator = "Flammie A Pirinen <flammie@iki.fi>"
 let g:po_lang_team = "Lokalisointi-Laatu <laatu@lokalisointi.org>"
 
+" gvim don't be smart with file selector
 :autocmd FileType * unlet! b:browsefilter
 
