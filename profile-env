@@ -1,13 +1,15 @@
 export EDITOR=vim
 export TERMINAL=sakura
+export BROWSER=chromium
 export CPATH=/opt/local/include:/usr/local/include:/usr/include
 export PKG_CONFIG_PATH=/opt/local/lib/pkgconfig:/opt/local/share/pkgconfig:/usr/local/lib/pkgconfig:/usr/local/share/pkgconfig:$HOME/lib/pkgconfig:$HOME/share/pkgconfig
 export CFLAGS="-O2 -march=native -ggdb -Wall -Wextra "
 export CXXFLAGS="${CFLAGS}"
 export LC_ALL=fi_FI.UTF-8
-export PATH=/opt/local/bin/:${HOME}/bin/:${HOME}/.local/bin/:${PATH}
+export PATH=/opt/local/bin/:${HOME}/bin/:${HOME}/.local/bin/:${HOME}/.config/composer/vendor/bin:${PATH}
 export YFLAGS=-v
 export ECHANGELOG_USER="Flammie Pirinen <flammie@gentoo.org>"
 export GTCORE=$HOME/Koodit/gtcore/
 export MAILER=claws-mail
 export JAVA_HOME=/usr/lib/jvm/default-java
+
