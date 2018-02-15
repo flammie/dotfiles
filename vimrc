@@ -5,6 +5,8 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'dpelle/vim-LanguageTool'
+Plugin 'vim-syntastic/syntastic'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -49,6 +51,8 @@ match OverLength /\%81v.\+/
 let g:po_translator = "Flammie A Pirinen <flammie@iki.fi>"
 let g:po_lang_team = "Lokalisointi-Laatu <laatu@lokalisointi.org>"
 
+" language tool meh
+let g:languagetool_jar = "~/LanguageTool-3.8/languagetool-commandline.jar"
 " gvim don't be smart with file selector
 :autocmd FileType * unlet! b:browsefilter
 
