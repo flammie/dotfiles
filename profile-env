@@ -12,4 +12,7 @@ export ECHANGELOG_USER="Flammie Pirinen <flammie@gentoo.org>"
 export GTCORE=$HOME/Koodit/gtcore/
 export MAILER=claws-mail
 export JAVA_HOME=/usr/lib/jvm/default-java
+export FEDORA_HOME=/var/fedora
+export CATALINA_HOME=/usr/share/tomcat7-root/
+export CLASSPATH=.:./src/main/
 
