@@ -56,3 +56,6 @@ let g:languagetool_jar = "~/LanguageTool-3.8/languagetool-commandline.jar"
 " gvim don't be smart with file selector
 :autocmd FileType * unlet! b:browsefilter
 
+" syntastic tweaks
+let g:syntastic_python_pylint_quiet_messages = {
+    \ "regex": '\[invalid-name\]' }
