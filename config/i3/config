@@ -75,6 +75,7 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 bindsym $mod+p exec passmenu
+bindsym $mod+Shift+p exec "clementine --play-pause"
 bar {
         status_command i3status
 }
