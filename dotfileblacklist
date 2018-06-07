@@ -10,6 +10,7 @@
 .AndroidStudioPreview~
 .annis
 .bitcoin
+.cabal
 .cache
 .chromium
 .claws-mail
@@ -30,13 +31,18 @@
 .macromedia
 .mozilla
 .opera
+.password-store
 .pulse
 .pre-commit
+.pki
+.pornview
+.renpy
 .swn
 .swo
 .swp
 .theano
 .themes
 .thumbnails
+.wine
 .Xauthority
 .xsession-errors
