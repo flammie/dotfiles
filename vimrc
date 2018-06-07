@@ -8,6 +8,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'dpelle/vim-LanguageTool'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'Yggdroot/indentLine'
+Plugin 'flammie/vim-finitestatemorphology'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
