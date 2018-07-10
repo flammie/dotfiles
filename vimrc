@@ -7,8 +7,8 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'dpelle/vim-LanguageTool'
 Plugin 'vim-syntastic/syntastic'
-Plugin 'Yggdroot/indentLine'
 Plugin 'flammie/vim-finitestatemorphology'
+Plugin 'nathanaelkane/vim-indent-guides'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -61,3 +61,7 @@ let g:languagetool_jar = "~/LanguageTool-3.8/languagetool-commandline.jar"
 " syntastic tweaks
 let g:syntastic_python_pylint_quiet_messages = {
     \ "regex": '\[invalid-name\]' }
+
+" indent guides
+let g:indent_guides_enable_on_vim_startup = 1
+
