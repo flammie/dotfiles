@@ -1,3 +1,30 @@
+# copious output firsts for tin
+application/msword; antiword %s; copiousoutput
+application/pdf; pdftotext -q -raw %s -; copiousoutput
+application/rtf;     unrtf --text %s; copiousoutput
+application/vnd.fdf; pdftotext -q -raw %s -; copiousoutput
+application/vnd.ms-excel;      xls2csv -x %s -s cp1252 -d utf-8; copiousoutput
+application/vnd.ms-word.document.12; docx2txt < %s; copiousoutput
+application/vnd.oasis.opendocument.text;    odt2txt --stdout %s; copiousoutput
+application/vnd.openxmlformats-officedocument.wordprocessingml.document; docx2txt < '%s' -; copiousoutput
+application/vnd.oasis.opendocument.text-master; odt2txt  '%s'; copiousoutput
+application/vnd.oasis.opendocument.text-template; odt2txt  '%s'; copiousoutput
+application/vnd.oasis.opendocument.text-web; odt2txt  '%s'; copiousoutput
+application/vnd.oasis.opendocument.presentation; odt2txt  '%s'; copiousoutput
+application/vnd.oasis.opendocument.presentation-template; odt2txt  '%s'; copiousoutput
+application/vnd.openxmlformats-officedocument.wordprocessingml.document; docx2txt < '%s' -; copiousoutput
+application/vnd.sun.xml.writer; odt2txt  '%s'; copiousoutput
+application/vnd.sun.xml.writer.template; odt2txt  '%s'; copiousoutput
+application/vnd.sun.xml.writer.global; odt2txt  '%s'; copiousoutput
+application/vnd.sun.xml.calc; odt2txt  '%s'; copiousoutput
+application/vnd.sun.xml.calc.template; odt2txt  '%s'; copiousoutput
+application/vnd.sun.xml.impress; odt2txt  '%s'; copiousoutput
+application/vnd.sun.xml.impress.template; odt2txt  '%s'; copiousoutput
+text/html; lynx -dump -force_html '%s'; copiousoutput; description=HTML Text; nametemplate=%s.html
+text/plain; cat '%s'; copiousoutput
+
+
+# multimedia yay (needs X)
 application/pdf; evince '%s'
 application/rtf; abiword '%s'
 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet; gnumeric '%s'
