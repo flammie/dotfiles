@@ -46,9 +46,12 @@ fi
 source ${HOME}/.bash-aliases
 source ${HOME}/.bash-env
 
+# add SSH info to PS1 or "localhost"
 if test -n "$SSH_CONNECTION" ; then
     SHOWHOST=$(echo $SSH_CONNECTION | cut -d ' ' -f 1 | sed -e 's/...$/.../')
 else
     SHOWHOST=localhost
 fi
-export PS1="${PS1/\\h/\\[\\033[01;37m\\]${SHOWHOST}->\\[\\033[01;33m\\]\\h}"
+sep=$'\u276F'
+export PS1="${PS1/\\h/\\[\\033[01;37m\\]${SHOWHOST}${sep}\\[\\033[01;33m\\]\\h}"
+
