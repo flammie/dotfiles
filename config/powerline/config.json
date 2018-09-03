@@ -1,0 +1,12 @@
+{
+   "common": {
+       "default_top_theme": "unicode"
+    },
+    "ext": {
+        "shell": {
+            "theme": "test"
+        },
+        "vim": {
+        }
+    }
+}

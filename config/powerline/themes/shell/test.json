@@ -1,0 +1,43 @@
+{
+	"segments": {
+        "above": [
+            {
+               "left": [
+                    {
+                        "function": "powerline.segments.common.net.hostname"
+                    },
+                    {
+                        "function": "powerline.segments.common.env.user"
+                    },
+                    {
+                        "function": "powerline.segments.common.env.virtualenv"
+                    },
+                    {
+                        "function": "powerline.segments.common.vcs.branch"
+                    },
+                    {
+                        "function": "powerline.segments.shell.cwd"
+                    }
+                ],
+                "right": [
+                    {
+                        "function": "powerline.segments.common.time.date"
+                    }
+                ]
+            }
+        ],
+        "left": [
+            {
+                "function": "powerline.segments.common.env.environment",
+                "args": {
+                    "variable": "LC_ALL"
+                }
+            }
+        ],
+        "right": [
+            {
+                "function": "powerline.segments.shell.last_pipe_status"
+            }
+        ]
+	}
+}
