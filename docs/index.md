@@ -47,3 +47,6 @@ nonsense json:
 did I mention, if the some of the blocks end up empty they disappear. And since
 my bottom row is only $-or-#, which is not supported by powerline, it took me an
 hour before I gave up and just added env `LC_ALL` there, pfft.
+
+And finally I fixed this by writing [my own
+powerline-segment](//github.com/flammie/powerline-flammie/).
