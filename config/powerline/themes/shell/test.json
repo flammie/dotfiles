@@ -21,17 +21,18 @@
                 ],
                 "right": [
                     {
-                        "function": "powerline.segments.common.time.date"
+                        "function": "powerline.segments.common.time.date",
+                        "args": {
+                            "format": "%H:%M:%S",
+                            "istime": true
+                        }
                     }
                 ]
             }
         ],
         "left": [
             {
-                "function": "powerline.segments.common.env.environment",
-                "args": {
-                    "variable": "LC_ALL"
-                }
+                "function": "powerline-flammie.stuff.usersigil"
             }
         ],
         "right": [
