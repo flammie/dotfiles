@@ -74,7 +74,10 @@ mode "resize" {
         bindsym Escape mode "default"
 }
 bindsym $mod+r mode "resize"
+# custom
 bindsym $mod+p exec passmenu
+bindsym $mod+y exec "setxkbmap -layout ru -variant phonetic"
+bindsym $mod+Shift+y exec "setxkbmap -layout fi"
 bindsym $mod+Shift+p exec "clementine --play-pause"
 bar {
         status_command i3status
