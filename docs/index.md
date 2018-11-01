@@ -12,6 +12,77 @@ a dot in some circles. The dot is omitted in the git repo, there's a partial
 script to sync home directory and dotfiles repo. The below is documentation-ish
 rant blog thing, written in order of newest post first.
 
+## Mutt and imapfilter
+
+After being a long-time user of claws-mail, since they are
+stuck to gtk+2 and no usable html viewers, I had to make the
+change to mutt recently. I miss some filtering and spam
+assassination still, but imapfilter with lua scripting and
+mutt with blazing fast mail usage is great (claws-mail takes
+10 seconds per message, mutt 10 seconds for all your mail
+ever). Mutt is troublesome to configure and lacks some
+features. One good thing is to use pass for passwords:
+
+set imap_pass = "`pass gmail`"
+set smtp_pass="`pass gmail`"
+```
+
+just works, and looks neat. Gmail requires extra hacking,
+which is detailed in the mutt wiki, nothing big but just few
+odd settings.
+
+Another pita with mutt and also stuff like tin is the support
+for other stuff than text/plain, which requires mailcap hacking, but
+after a bit of work works better than graphical clients.
+So it's probably useful to have a mailcap dotfile where
+first mention of mimetype is how you'd open anything, I
+prefer text-versions so I have stuff like this:
+
+```
+application/msword; antiword %s; copiousoutput
+application/pdf; pdftotext -q -raw %s -; copiousoutput
+application/rtf;     unrtf --text %s; copiousoutput
+...
+```
+
+For PDFs it's sometimes bad if you want to print lots you
+may want to just pull the graphical viewer up higher:
+
+```
+application/pdf; evince '%s'
+```
+
+As for imapfilter, it's no replacement for claws-mail's 
+filtering, but it also kind of forces you to think what's efficient
+in imap, and realise that most filters you need are like this:
+
+```lua
+githubs = gmail["INBOX"]:contain_from("notifications@github.com")
+githubs:move_messages(gmail["imapfiltered/github"])
+```
+
+Gmail is really weird with folders and moves and creates so
+you have to test and try a lot. This helped me:
+
+```lua
+options.subscribe = true
+options.charset = 'UTF-8'
+options.create = true
+```
+
+and use verbose mode a lot.
+
+## Vim and gvim
+
+Vim is my editor of choice, and it has loads of customisations
+and configurations. Most important trick for me has been
+finding Vundle as *plugin* manager. Since there are a dozen of
+different ones out there, I've tried also pathogen but it wasn't really
+working for me, Vundle just works with [one-time setup]()
+and then just `:PluginUpdate` when you feel like it. Other
+nice components are things like editorconfig and powerline, basically
+most of the complex config stuff outsourced. 
+
 ## I3
 
 [I3]() is the windowing manager I use, it's tiling (occupies whole screen), so
