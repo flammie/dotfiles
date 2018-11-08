@@ -1,6 +1,7 @@
 ! Default stuff to white on blck
 *background: black
 *foreground: white
+*cursor: pink
 
 ! Xterm reference colors in /etc/X11/app-defaults/XTerm-Color
 XTerm*faceName: Terminus
@@ -21,4 +22,7 @@ XClock*secondColor: white
 XClock*majorColor: white
 XClock*minorColor: white
 
+! Urxvt
+URxvt.font: xft:Source Code Pro:size=10
+URxvt.cursorColor: pink
 
