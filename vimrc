@@ -9,6 +9,7 @@ Plugin 'dpelle/vim-LanguageTool'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'flammie/vim-finitestatemorphology'
 Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'altercation/vim-colors-solarized'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -74,3 +75,5 @@ let g:syntastic_check_on_wq = 0
 " indent guides
 let g:indent_guides_enable_on_vim_startup = 1
 
+" powerline arch
+let g:powerline_pycmd = "py3"
