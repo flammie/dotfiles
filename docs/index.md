@@ -12,6 +12,37 @@ a dot in some circles. The dot is omitted in the git repo, there's a partial
 script to sync home directory and dotfiles repo. The below is documentation-ish
 rant blog thing, written in order of newest post first.
 
+## Font config and Noto Color Emoji
+
+This is not strictly a dotfile config but I have to fix it so often that it migh
+as well be here: The color emoji support in linuz sucks so bad that it makes
+everything invisible if you have Noto Color Emoji installed, unless you use this
+lovely XML-based configuration in `/etc/fonts.conf.d/`:
+
+```xml
+<?xml version='1.0'?>
+<!DOCTYPE fontconfig SYSTEM 'fonts.dtd'>
+<fontconfig>
+	<match target="font">
+		<test name="family" compare="contains">
+			<string>Emoji</string>
+		</test>
+		<edit name="hinting" mode="assign">
+			<bool>true</bool>
+		</edit>
+		<edit name="hintstyle" mode="assign">
+			<const>hintslight</const>
+		</edit>
+		<edit name="embeddedbitmap" mode="assign">
+			<bool>true</bool>
+		</edit>
+	</match>
+</fontconfig>
+```
+
+This haŕd-to-google solution can be found from [feedesktop bugzilla
+bug #104542](https://bugs.freedesktop.org/show_bug.cgi?id=104542).
+
 ## Mutt and imapfilter
 
 After being a long-time user of claws-mail, since they are
@@ -23,6 +54,7 @@ mutt with blazing fast mail usage is great (claws-mail takes
 ever). Mutt is troublesome to configure and lacks some
 features. One good thing is to use pass for passwords:
 
+```
 set imap_pass = "`pass gmail`"
 set smtp_pass="`pass gmail`"
 ```
@@ -52,7 +84,7 @@ may want to just pull the graphical viewer up higher:
 application/pdf; evince '%s'
 ```
 
-As for imapfilter, it's no replacement for claws-mail's 
+As for imapfilter, it's no replacement for claws-mail's
 filtering, but it also kind of forces you to think what's efficient
 in imap, and realise that most filters you need are like this:
 
@@ -81,7 +113,7 @@ different ones out there, I've tried also pathogen but it wasn't really
 working for me, Vundle just works with [one-time setup]()
 and then just `:PluginUpdate` when you feel like it. Other
 nice components are things like editorconfig and powerline, basically
-most of the complex config stuff outsourced. 
+most of the complex config stuff outsourced.
 
 ## I3
 
