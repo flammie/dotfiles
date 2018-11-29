@@ -10,7 +10,7 @@
 *fadecolor: #002b36
 *pointerColorBackground: #586e75
 *pointerColorForeground: #93a1a1
-*color0: #073642
+*color0: #275662
 *color1: #dc322f
 *color2: #859900
 *color3: #b58900
@@ -19,7 +19,7 @@
 *color6: #2aa198
 *color7: #eee8d5
 *color9: #cb4b16
-*color8: #002b36
+*color8: #204b56
 *color10: #586e75
 *color11: #657b83
 *color12: #839496
@@ -29,7 +29,7 @@
 
 
 ! Xterm reference colors in /etc/X11/app-defaults/XTerm-Color
-XTerm*faceName: Terminus
+XTerm*faceName: Source Code Pro
 XTerm*faceSize: 12
 XTerm*visualBell: True
 XTerm*bellIsUrgent: True
@@ -48,12 +48,12 @@ XClock*majorColor: white
 XClock*minorColor: white
 
 ! Urxvt
-URxvt.font: xft:Source Code Pro:size=10,\
-            xft:Terminus:size=10,\
-            xft: Unifont:size=10,
-            9x15bold
+URxvt.font: xft:Source Code Pro:size=10:minspace=False,\
+            xft:Terminus:size=10:minspace=False,\
+            xft:Noto Mono:size=10:minspace=False,\
+            xft:Unifont:size=10:minspace=False
 URxvt.cursorColor: pink
 URxvt.print-pipe: cat >/tmp/urxvt-printscreen
 URxvt.saveLines: 8192
-
+!URxvt.letterSpace: 2
 
