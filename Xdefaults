@@ -55,5 +55,10 @@ URxvt.font: xft:Source Code Pro:size=10:minspace=False,\
 URxvt.cursorColor: pink
 URxvt.print-pipe: cat >/tmp/urxvt-printscreen
 URxvt.saveLines: 8192
+URxvt.perl-ext-common: default,matcher
+URxvt.url-launcher: /usr/bin/xdg-open
+URxvt.matcher.button: 2
+URxvt.matcher.rend.0: Uline Bold fg5
+
 !URxvt.letterSpace: 2
 
