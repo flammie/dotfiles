@@ -30,9 +30,9 @@ spam "X-Spam-Score: ([0-9\\.]+).*" "SA: %1"
 # ui
 set pager_format = " %C -%[H:%M] %.20v %s%* %?H? [%H] ?"
 ignore *
-unignore From To Cc Bcc Date Subject Organization User-Agent
+unignore From To Cc Bcc Date Subject Organization User-Agent X-Mailer X-Spam-Score X-Spam-Status
 unhdr_order *
-hdr_order Subject: From: To: Cc: Bcc: Date: Organization: User-Agent:
+hdr_order Subject: From: To: Cc: Bcc: Date: Organization: User-Agent: X-Mailer: X-Spam-Score: X-Spam-Status
 
 
 #
@@ -45,6 +45,13 @@ set crypt_use_gpgme = yes
 
 # URL handler :-/
 macro index,pager \cb "<pipe-message> urlscan<Enter>" "call urlscan to extract URLs out of a message"
+
+# keybindingses
+bind alias,index,browser,query G last-entry
+bind pager G bottom
+
+bind alias,index,browser,query gg first-entry
+bind pager gg top
 
 source ~/.mutt/mutt-colors-solarized/mutt-colors-solarized-dark-256.muttrc
 source $alias_file
