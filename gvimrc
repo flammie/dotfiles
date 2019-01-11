@@ -1,4 +1,4 @@
-set guifont=Terminus\ 10
+set guifont=Source\ Code\ Pro\ 10
 let spell_language_list = "english,finnish"
 let spell_finnish_iskeyword = "@,48-57,_,192-255,-"
 let spell_auto_type = "tex,mail,text,html,sgml,otl,cvs,xml"
