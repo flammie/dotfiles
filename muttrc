@@ -7,6 +7,7 @@ source ~/.muttrc-uhh
 set include
 set smart_wrap
 set copy
+set edit_headers=yes
 auto_view text/html
 alternative_order text/plain text/enriched text/html
 set send_charset="utf-8"
