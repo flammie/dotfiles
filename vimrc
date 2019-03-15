@@ -9,14 +9,13 @@ Plugin 'dpelle/vim-LanguageTool'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'flammie/vim-finitestatemorphology'
 Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'altercation/vim-colors-solarized'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
 " Vundle END
 "
 " my setup
-set so=1
+set so=4
 set ts=4
 set shiftwidth=4
 set expandtab
