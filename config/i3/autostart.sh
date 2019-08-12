@@ -1,5 +1,5 @@
 #!/bin/bash
-xautolock -detectsleep -locker $HOME/.i3/i3lock-suspend.sh &
+xss-lock -l -- ~/.config/i3/i3lock.sh &
 synclient VertScrollDelta=-112
 synclient TapButton1=1
 synclient TapButton2=3
