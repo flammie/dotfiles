@@ -1,2 +1,2 @@
 #!/bin/sh
-feh  --image-bg black --bg-max '/home/tpirinen/Bilder/hissi.jpg' '/home/tpirinen/Bilder/ruuhka.jpg' '/home/tpirinen/Bilder/säänsuoja.jpg' '/home/tpirinen/Bilder/oma-vuoro-puhua-web.jpg' '/home/tpirinen/Bilder/vaara-bussi.jpg' '/home/tpirinen/Bilder/welcome-to-the-finnish-language-129256.jpg' '/home/tpirinen/Bilder/smalltalk2.jpg' '/home/tpirinen/Bilder/stereotypes.jpg' 
+feh --bg-max 
