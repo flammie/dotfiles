@@ -6,9 +6,11 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'dpelle/vim-LanguageTool'
-Plugin 'vim-syntastic/syntastic'
+Plugin 'w0rp/ale'
 Plugin 'flammie/vim-finitestatemorphology'
+Plugin 'flammie/vim-conllu'
 Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'vim-scripts/po.vim--gray'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -71,8 +73,10 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
+" ALE
+
+let g:ale_lint_delay=3200
+
 " indent guides
 let g:indent_guides_enable_on_vim_startup = 1
 
-" powerline arch
-let g:powerline_pycmd = "py3"
