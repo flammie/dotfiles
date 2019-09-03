@@ -54,8 +54,4 @@ else
 fi
 sep=$'\u276F'
 export PS1="${PS1/\\h/\\[\\033[01;37m\\]${SHOWHOST}${sep}\\[\\033[01;33m\\]\\h}"
-powerline-daemon -q
-POWERLINE_BASH_CONTINUATION=1
-POWERLINE_BASH_SELECT=1
-source /usr/share/powerline/bash/powerline.sh
-
+source ~/github/pureline/pureline ~/.pureline.conf
