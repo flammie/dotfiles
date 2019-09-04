@@ -11,6 +11,7 @@ Plugin 'flammie/vim-finitestatemorphology'
 Plugin 'flammie/vim-conllu'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'vim-scripts/po.vim--gray'
+Plugin 'editorconfig/editorconfig-vim'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -45,6 +46,7 @@ syntax sync minlines=256
 set synmaxcol=128
 command W w
 command Wq wq
+command Q q
 map u <Nop>
 
 " always highlight overlong lines as error!
