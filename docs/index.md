@@ -19,3 +19,4 @@ or some such attached:
 * [powerline](powerline.html), partially replaced with:
   * [pureline](pureline.html)
 * [mailcap](mailcap.html)
+* [editorconfig](editorconfig.html)
