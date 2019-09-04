@@ -1,5 +1,8 @@
 # Powerline dotfiles
 
+*See also: [pureline dotfiles](pureline.html), a bash-only replacement for
+powerline.*
+
 Powerline is a set if python stuff to create modelines for vim, PS1 for bash
 and so forth. I'm not really excited that it's made in python (overkill) and it
 lacks some very basic features (cannot print $ or # out of the box). But it's

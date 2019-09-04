@@ -16,5 +16,6 @@ or some such attached:
 * [imapfilter](imapfilter.html)
 * [vim and gvim](vim.html)
 * [i3](i3.html)
-* [powerline](powerline.html)
+* [powerline](powerline.html), partially replaced with:
+  * [pureline](pureline.html)
 * [mailcap](mailcap.html)
