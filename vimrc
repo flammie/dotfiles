@@ -75,9 +75,13 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
-" ALE
-
-let g:ale_lint_delay=3200
+" ALE tewaks
+let g:ale_open_list = 1
+let g:ale_lint_delay = 3200
+let g:ale_conllu_validate_options = "--lang olo"
+"let g:ale_lint_on_text_changed = 'never'
+"let g:ale_lint_on_enter = 0
+"let g:ale_lint_on_save = 0
 
 " indent guides
 let g:indent_guides_enable_on_vim_startup = 1
