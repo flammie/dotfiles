@@ -12,6 +12,7 @@ Plugin 'flammie/vim-conllu'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'vim-scripts/po.vim--gray'
 Plugin 'editorconfig/editorconfig-vim'
+Plugin 'itchyny/lightline.vim'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -67,9 +68,9 @@ let g:syntastic_python_pylint_quiet_messages = {
     \ "regex": '\[invalid-name\]' }
 " syntastic suggested defaults:
 " <https://github.com/vim-syntastic/syntastic#3-recommended-settings>
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
@@ -78,7 +79,8 @@ let g:syntastic_check_on_wq = 0
 " ALE tewaks
 let g:ale_open_list = 1
 let g:ale_lint_delay = 3200
-let g:ale_conllu_validate_options = "--lang olo"
+let g:ale_conllu_validate_executable = 'conllu_validate.py'
+let g:ale_conllu_validate_options = '--lang krl'
 "let g:ale_lint_on_text_changed = 'never'
 "let g:ale_lint_on_enter = 0
 "let g:ale_lint_on_save = 0
