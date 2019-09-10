@@ -1,7 +1,9 @@
 # Powerline dotfiles
 
 *See also: [pureline dotfiles](pureline.html), a bash-only replacement for
-powerline.*
+powerline, I also repaced the vim powerline with
+[lightline](https://github.com/itchyny/lightline.vim), it's so good I didn't
+even need to config any dotfiles.*
 
 Powerline is a set if python stuff to create modelines for vim, PS1 for bash
 and so forth. I'm not really excited that it's made in python (overkill) and it
