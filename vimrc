@@ -13,6 +13,7 @@ Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'vim-scripts/po.vim--gray'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'itchyny/lightline.vim'
+Plugin 'tpope/vim-fugitive'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -88,3 +89,15 @@ let g:ale_conllu_validate_options = '--lang krl'
 " indent guides
 let g:indent_guides_enable_on_vim_startup = 1
 
+" lightline
+let g:lightline = {
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'fugitive', 'readonly', 'filename', 'modified',
+      \               'charvaluehex' ] ]
+      \ },
+      \ 'component': {
+      \   'charvaluehex': 'U+%04B',
+      \   'fugitive': '%{FugitiveHead()}'
+      \ },
+      \ }
