@@ -80,7 +80,7 @@ let g:syntastic_check_on_wq = 0
 " ALE tewaks
 let g:ale_open_list = 1
 let g:ale_lint_delay = 3200
-let g:ale_conllu_validate_executable = 'conllu_validate.py'
+let g:ale_conllu_validate_executable = $HOME . '/github/universaldependencies/tools/validate.py'
 let g:ale_conllu_validate_options = '--lang krl'
 "let g:ale_lint_on_text_changed = 'never'
 "let g:ale_lint_on_enter = 0
