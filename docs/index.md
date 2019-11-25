@@ -24,7 +24,7 @@ or some such attached:
 * [editorconfig](editorconfig.html)
 * **gnome-terminal**, which does not have dotfiles but only a sad binary blob,
   (I'd rather use any other terminal but they get discontinued or lack features:
-  * rxvt-unicode, which ironically lacks unicode support
+  * [rxvt-unicode](rxvt-unicode.html), which ironically lacks unicode support
   * termite, which doesn't work without monkeypatched vte that is a PITA to keep
     up with
   * roxterm, which is discontinued
