@@ -8,6 +8,8 @@ a dot in some circles.
 The dot is omitted [in the git repo](https://github.com/flammie/dotfiles/),
 there's a partial script to sync home directory and dotfiles repo as well.
 
+## Configurations per app
+
 For the following softwares and configurations have “documentation” or a rant
 or some such attached:
 
@@ -20,3 +22,10 @@ or some such attached:
   * [pureline](pureline.html)
 * [mailcap](mailcap.html)
 * [editorconfig](editorconfig.html)
+* **gnome-terminal**, which does not have dotfiles but only a sad binary blob,
+  (I'd rather use any other terminal but they get discontinued or lack features:
+  * rxvt-unicode, which ironically lacks unicode support
+  * termite, which doesn't work without monkeypatched vte that is a PITA to keep
+    up with
+  * roxterm, which is discontinued
+  * sakura, had some bugs and unresponsive upstream)
