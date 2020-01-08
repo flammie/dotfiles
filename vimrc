@@ -5,6 +5,7 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'morhetz/gruvbox'
 Plugin 'dpelle/vim-LanguageTool'
 Plugin 'w0rp/ale'
 Plugin 'flammie/vim-finitestatemorphology'
@@ -42,8 +43,10 @@ else
     set lcs=tab:>-,eol:$,trail:-,nbsp:%,extends:>,precedes:<
 endif
 set background=dark
-colorscheme solarized
+set termguicolors
+colorscheme gruvbox
 filetype plugin indent on
+syntax enable
 syntax sync minlines=256
 set synmaxcol=128
 command W w
