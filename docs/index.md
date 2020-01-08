@@ -29,3 +29,4 @@ or some such attached:
     up with
   * roxterm, which is discontinued
   * sakura, had some bugs and unresponsive upstream)
+* [rclone](rclone.html), a command-line interface for cloud backup, like rsync
