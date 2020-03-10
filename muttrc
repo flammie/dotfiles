@@ -1,9 +1,19 @@
-# GMAIL
-# source ~/.muttrc-gmail
-# UHH
-source ~/.muttrc-uhh
+# Folder hooks
+folder-hook 'ffflammie.gmail.com' 'source ~/.muttrc-gmail'
+folder-hook 'senv546.uni-hamburg.de' 'source ~/.muttrc-uhh'
 
-# settings
+# Default account
+# GMAIL
+source ~/.muttrc-gmail
+# UHH
+# source ~/.muttrc-uhh
+
+# Macros for switching accounts
+macro index <f2> '<sync-mailbox><enter-command>source ~/.muttrc-gmail<enter><change-folder>imaps://imap.gmail.com/<enter>'
+macro index <f3> '<sync-mailbox><enter-command>source ~/.muttrc-uhh<enter><change-folder>imaps://mailhost.uni-hamburg.de/<enter>'
+
+
+# common settings
 set include
 set smart_wrap
 set copy
@@ -17,8 +27,6 @@ set simple_search="~f %s | ~C %s | ~s %s"
 set sort=threads
 set strict_threads=yes
 set alias_file=~/.mutt/aliases
-set header_cache=~/.mutt/cache/headers
-set message_cachedir=~/.mutt/cache/bodies
 set mark_old=no
 set mail_check=60
 set imap_keepalive=300
