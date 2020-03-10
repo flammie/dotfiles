@@ -15,7 +15,7 @@ mailboxes +[Gmail]
 
 set smtp_url = 'smtps://ffflammie@gmail.com@smtp.gmail.com'
 set smtp_pass="`pass gmail`"
-set record=""
+unset record
 set move=no
 
 set header_cache=~/.mutt/gmail/cache/headers

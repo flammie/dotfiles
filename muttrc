@@ -66,7 +66,7 @@ bind index,pager gr group-reply
 
 bind index N search-opposite
 
-macro index c "<change-folder>?"
+#macro index c "<change-folder>?"
 
 source ~/.mutt/mutt-colors-solarized/mutt-colors-solarized-dark-256.muttrc
 source $alias_file

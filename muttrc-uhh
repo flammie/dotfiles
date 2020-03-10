@@ -6,16 +6,19 @@ set signature = ~/.signature.uni
 set imap_user=senv546
 set imap_pass=`pass uni-hamburg-uhh`
 set folder=imaps://senv546@mailhost.uni-hamburg.de/
-set spoolfile=imaps://senv546@mailhost.uni-hamburg.de/
-set record=imaps://senv546@mailhost.uni-hamburg.de/INBOX/Sent
-set postponed=imaps://senv546@mailhost.uni-hamburg.de/INBOX/Drafts
-
-set header_cache=~/.mutt/uhh/cache/headers
-set message_cachedir=~/.mutt/uhh/cache/bodies
+set spoolfile=+INBOX
+set record=+INBOX/Sent
+set postponed=+INBOX/Drafts
 
 set ssl_starttls=yes
 set ssl_use_sslv3 = yes
 set ssl_force_tls = yes
+set smtp_url = 'smtp://senv546@mailhost.uni-hamburg.de'
+set smtp_pass="`pass uni-hamburg-uhh`"
+
+set header_cache=~/.mutt/uhh/cache/headers
+set message_cachedir=~/.mutt/uhh/cache/bodies
+
 
 
 
