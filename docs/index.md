@@ -30,3 +30,5 @@ or some such attached:
   * roxterm, which is discontinued
   * sakura, had some bugs and unresponsive upstream)
 * [rclone](rclone.html), a command-line interface for cloud backup, like rsync
+* [rust](rust.html), a programming language with bundled package management
+  unhappy face
