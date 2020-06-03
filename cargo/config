@@ -1,0 +1,7 @@
+[build]
+jobs = 1
+
+[cargo-new]
+name = "Flammie A Pirinen"
+email = "flammie@iki.fi"
+
