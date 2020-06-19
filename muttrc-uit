@@ -1,0 +1,35 @@
+# Uni mail
+set realname = "Tommi A Pirinen"
+set from = "tommi.pirinen@uit.no"
+alternates "tpi006@uit.no"
+set signature = ~/.signature.uni
+
+set imap_user=tpi006@uit.no
+set imap_pass=`pass uit.no`
+#set folder=imaps://tpi006@uit.no@outlook.office365.com/
+set folder=imaps://outlook.office365.com/
+set spoolfile=+INBOX
+set record=+INBOX/Sent
+set postponed=+INBOX/Drafts
+#set imap_check_subscribed="yes"
+#set imap_list_subscribed="yes"
+set timeout=15
+set mail_check=90
+set imap_keepalive=180
+set imap_idle
+unset mark_old
+
+set ssl_starttls=yes
+set ssl_use_sslv3 = yes
+set ssl_force_tls = yes
+
+set smtp_url = 'smtps://tpi006@uit.no@smtpserver.uit.no:465'
+set smtp_pass="`pass uit.no`"
+set smtp_authenticators = "login"
+
+set header_cache=~/.mutt/uit/cache/headers
+set message_cachedir=~/.mutt/uit/cache/bodies
+
+
+
+

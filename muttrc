@@ -1,16 +1,20 @@
 # Folder hooks
 folder-hook 'ffflammie.gmail.com' 'source ~/.muttrc-gmail'
+folder-hook 'tpi006.uit.no' 'source ~/.muttrc-uit'
 folder-hook 'senv546.uni-hamburg.de' 'source ~/.muttrc-uhh'
 
 # Default account
 # GMAIL
-source ~/.muttrc-gmail
+ source ~/.muttrc-gmail
+# UiT
+# source ~/.muttrc-uit
 # UHH
 # source ~/.muttrc-uhh
 
 # Macros for switching accounts
 macro index <f2> '<sync-mailbox><enter-command>source ~/.muttrc-gmail<enter><change-folder>imaps://imap.gmail.com/<enter>'
-macro index <f3> '<sync-mailbox><enter-command>source ~/.muttrc-uhh<enter><change-folder>imaps://mailhost.uni-hamburg.de/<enter>'
+macro index <f3> '<sync-mailbox><enter-command>source ~/.muttrc-uit<enter><change-folder>imaps://tpi006@uit.no@outlook.office365.com/<enter>'
+macro index <f4> '<sync-mailbox><enter-command>source ~/.muttrc-uhh<enter><change-folder>imaps://mailhost.uni-hamburg.de/<enter>'
 
 
 # common settings
