@@ -14,6 +14,7 @@
 .bitcoin
 .bzr.log
 .cabal
+.cargo
 .cache
 .chromium
 .claws-mail
