@@ -1,0 +1,47 @@
+#/usr/bin/env bash
+_gut_completions()
+{
+    local cur
+    COMPREPLY=()
+    cur=`_get_cword`
+
+    case "$cur" in
+        -*)
+            COMPREPLY=( $( compgen -W '-h --help \
+  -V --version ' -- $cur ) )
+            ;;
+        
+
+
+        *)
+            COMPREPLY=( $( compgen -W 'add \
+  apply \
+  branch \
+  checkout \
+  ci \
+  clean \
+  clone \
+  commit \
+  create \
+  fetch \
+  help \
+  hook \
+  init \
+  invite \
+  make \
+  merge \
+  pull \
+  push \
+  remove \
+  set \
+  show \
+  status \
+  template \
+  topic \
+  transfer \
+  workflow ' -- $cur ) )
+            ;;
+    esac
+}
+
+complete -F _gut_completions gut

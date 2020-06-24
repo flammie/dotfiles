@@ -13,8 +13,12 @@ set postponed = "+[Gmail]/Drafts"
 
 mailboxes +[Gmail]
 
-set smtp_url = 'smtps://ffflammie@gmail.com@smtp.gmail.com'
-set smtp_pass="`pass gmail`"
+# set smtp_url = 'smtps://ffflammie@gmail.com@smtp.gmail.com'
+# set smtp_pass="`pass gmail`"
+set smtp_url = 'smtp://flammie@smtp.iki.fi:587'
+set smtp_pass = "`pass iki-smtp`"
+set use_envelope_from=yes
+set envelope_from_address="flammie@iki.fi"
 unset record
 set move=no
 
