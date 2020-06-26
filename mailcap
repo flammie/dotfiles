@@ -20,7 +20,7 @@ application/vnd.sun.xml.calc; odt2txt  '%s'; copiousoutput
 application/vnd.sun.xml.calc.template; odt2txt  '%s'; copiousoutput
 application/vnd.sun.xml.impress; odt2txt  '%s'; copiousoutput
 application/vnd.sun.xml.impress.template; odt2txt  '%s'; copiousoutput
-text/html; lynx -dump -force_html '%s'; copiousoutput; description=HTML Text; nametemplate=%s.html
+text/html; lynx -display_charset=utf-8 -dump -force_html '%s'; copiousoutput; description=HTML Text; nametemplate=%s.html
 text/plain; cat '%s'; copiousoutput
 
 
