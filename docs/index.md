@@ -13,6 +13,7 @@ there's a partial script to sync home directory and dotfiles repo as well.
 For the following softwares and configurations have “documentation” or a rant
 or some such attached:
 
+* [pass](pass.html) the password store for command-line
 * [fontconfig](fontconfig.html) and color emoji (2019)
 * [mutt](mutt.html)
 * [imapfilter](imapfilter.html)
