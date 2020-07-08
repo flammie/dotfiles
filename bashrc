@@ -7,6 +7,8 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 elif [ -f /usr/share/bash-completion/bash_completion ] ; then
     . /usr/share/bash-completion/bash_completion
+elif [ -f /opt/local/etc/profile.d/bash_completion.sh ]; then
+    . /opt/local/etc/profile.d/bash_completion.sh
 fi
 
 case ${TERM} in
