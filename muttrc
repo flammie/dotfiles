@@ -5,9 +5,9 @@ folder-hook 'senv546.uni-hamburg.de' 'source ~/.muttrc-uhh'
 
 # Default account
 # GMAIL
- source ~/.muttrc-gmail
+# source ~/.muttrc-gmail
 # UiT
-# source ~/.muttrc-uit
+source ~/.muttrc-uit
 # UHH
 # source ~/.muttrc-uhh
 
@@ -36,6 +36,7 @@ set mail_check=60
 set imap_keepalive=300
 set read_inc = 1
 set time_inc = 300
+unset markers
 
 # spam
 spam "X-Spam-Score: ([0-9\\.]+).*" "SA: %1"
