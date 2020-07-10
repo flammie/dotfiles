@@ -6,8 +6,8 @@ export PKG_CONFIG_PATH=/opt/local/lib/pkgconfig:/opt/local/share/pkgconfig:/usr/
 export CFLAGS="-O2 -march=native -ggdb -Wall -Wextra "
 export CXXFLAGS="${CFLAGS}"
 export LC_ALL=fi_FI.UTF-8
-export LANGUAGE=nn_NO:nb_NO:de_DE:hu:fi:sv:en_GB:C
-export PATH=/opt/local/bin/:${HOME}/bin/:${HOME}/.local/bin/:${HOME}/.config/composer/vendor/bin:${HOME}/.cargo/bin/:${PATH}
+export LANGUAGE=nn_NO:nb_NO:no_NO:de_DE:hu:fi:sv:en_GB:C
+export PATH=/opt/local/bin/:${HOME}/bin/:${HOME}/.local/bin/:${HOME}/.config/composer/vendor/bin:${HOME}/.cargo/bin/:${HOME}/Library/Python/3.7/bin:${PATH}
 export YFLAGS=-v
 export ECHANGELOG_USER="Flammie Pirinen <flammie@gentoo.org>"
 export GTCORE=$HOME/gtsvn/giella-core
@@ -16,4 +16,5 @@ export JAVA_HOME=/usr/lib/jvm/default-java
 export FEDORA_HOME=/var/fedora
 export CLASSPATH=.:./src/main/
 export GTK_THEME=Adwaita:dark
-
+export PYTHONPATH=/usr/local/lib/python3.7/site-packages:/opt/local/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages:${PYTHONPATH}
+export ACLOCAL_PATH=/usr/local/share/aclocal:/opt/local/share/aclocal:/usr/share/aclocal
