@@ -15,6 +15,7 @@ Plugin 'vim-scripts/po.vim--gray'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'itchyny/lightline.vim'
 Plugin 'tpope/vim-fugitive'
+Plugin 'airblade/vim-gitgutter'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -44,6 +45,7 @@ else
 endif
 set background=dark
 set termguicolors
+let g:gruvbox_contrast_dark = 'hard'
 colorscheme gruvbox
 filetype plugin indent on
 syntax enable
@@ -57,6 +59,8 @@ map u <Nop>
 " always highlight overlong lines as error!
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 match OverLength /\%81v.\+/
+" show listchars very visibly pls
+highlight SpecialKey ctermfg=lightred
 
 " po.vim setup (me, Finnish team)
 let g:po_translator = "Flammie A Pirinen <flammie@iki.fi>"
@@ -104,3 +108,5 @@ let g:lightline = {
       \   'fugitive': '%{FugitiveHead()}'
       \ },
       \ }
+
+
