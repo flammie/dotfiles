@@ -11,9 +11,6 @@ Host myntti
     Hostname myntti.helsinki.fi
 Host kruuna
     Hostname kruuna.helsinki.fi
-Host flammie
-    ForwardX11Trusted yes
-    Hostname flammie.dyndns.org
 Host hippu
     ForwardX11Trusted yes
     Hostname hippu.csc.fi
@@ -51,3 +48,7 @@ Host clarin-helpdesk-neu
     Hostname fsd-cloud55.zam.kfa-juelich.de
 Host myvps
     Hostname 30197.s.t4vps.eu
+Host irc
+    Hostname ircer.flammie.name
+Host flammie
+    Hostname flammie.name
