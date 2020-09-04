@@ -1,7 +1,7 @@
 [user]
     name = Flammie Pirinen
     email = flammie@iki.fi
-	signingkey = 0xB55C73B38C4B9642!
+    signingkey = 0xB55C73B38C4B9642!
 [github]
     user = flammie
 [core]
@@ -12,11 +12,11 @@
 [color]
     ui = auto
 [http]
-	postBuffer = 242880000
+    postBuffer = 242880000
 [filter "lfs"]
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
-	clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
+    clean = git-lfs clean -- %f
 [pull]
-	ff = only
+    ff = only
