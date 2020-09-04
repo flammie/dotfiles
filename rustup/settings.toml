@@ -1,0 +1,5 @@
+default_toolchain = "stable"
+profile = "default"
+version = "12"
+
+[overrides]
