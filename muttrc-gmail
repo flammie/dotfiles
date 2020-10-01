@@ -6,7 +6,7 @@ set imap_pass = "`pass gmail`"
 set realname = 'Flammie A Pirinen'
 set from = "flammie@iki.fi"
 alternates "tommi.pirinen@iki.fi|ffflammie@gmail.com"
-set edit_headers = yes
+set signature = ~/.signature
 set folder = imaps://imap.gmail.com/
 set spoolfile = +INBOX
 set postponed = "+[Gmail]/Drafts"
