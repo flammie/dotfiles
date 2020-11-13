@@ -34,3 +34,4 @@ or some such attached:
 * [rust](rust.html), a programming language with bundled package management
   unhappy face
 * [autostart on X](x-autostart.html) scripts to autorun on X startup and how
+* [X keymaps and gxkb](xkbmap.html) for changing x keyboard layouts
