@@ -28,6 +28,9 @@ alias csort='LC_ALL=C sort'
 alias vähemmän='/usr/share/vim/vim??/macros/less.sh'
 alias vless='/usr/share/vim/vim??/macros/less.sh'
 
+# since imapfilter is slow, I want to see stuff
+alias imapfilter='imapfilter -v'
+
 # apt-cache search is overly eager
 apt-search() {
     apt-cache search $@ | fgrep $@
