@@ -20,11 +20,12 @@ set imap_idle
 unset mark_old
 
 set ssl_starttls=yes
-set ssl_use_sslv3 = yes
+#set ssl_use_sslv3 = yes
 set ssl_force_tls = yes
 
-set smtp_url = 'smtps://tpi006@uit.no@smtpserver.uit.no:465'
-set smtp_pass="`pass uit.no`"
+set hostname = 'uit.no'
+set smtp_url = 'smtp://tpi006@uit.no@outlook.office365.com:587'
+set smtp_pass = "`pass uit.no`"
 set smtp_authenticators = "login"
 
 set header_cache=~/.mutt/uit/cache/headers
