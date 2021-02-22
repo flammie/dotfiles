@@ -52,6 +52,7 @@ filetype plugin indent on
 syntax enable
 syntax sync minlines=256
 set synmaxcol=128
+set redrawtime=10000
 command W w
 command Wq wq
 command Q q
@@ -96,7 +97,10 @@ let g:ale_conllu_validate_options = '--lang krl'
 "let g:ale_lint_on_text_changed = 'never'
 "let g:ale_lint_on_enter = 0
 "let g:ale_lint_on_save = 0
-
+let g:ale_linters = {
+    \ 'c++': ['cc', 'ccls', 'clangd', 'clangtidy', 'clazy', 'cppcheck',
+    \         'cpplint', 'cquery', 'flawfinder']
+\}
 " indent guides
 let g:indent_guides_enable_on_vim_startup = 1
 
