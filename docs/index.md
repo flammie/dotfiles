@@ -36,3 +36,5 @@ or some such attached:
 * [autostart on X](x-autostart.html) scripts to autorun on X startup and how
 * [X keymaps and gxkb](xkbmap.html) for changing x keyboard layouts
 * [Gcalcli](gcalcli.html) command line client for google calendar
+* [systemd](systemd.html) is a notorious system daemon that actually has user
+  configurations stuffs
