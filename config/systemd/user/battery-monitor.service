@@ -1,0 +1,13 @@
+[Unit]
+Description=Patterimonitori
+
+[Service]
+Type=simple
+Environment=DISPLAY=:0
+Environment=XAUTHORITY=%h/.Xauthority
+ExecStart=/bin/bash %h/bin/battery-monitor.bash
+Restart=always
+RestartSec=66
+
+[Install]
+WantedBy=default.target
