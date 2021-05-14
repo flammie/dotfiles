@@ -1,0 +1,77 @@
+[MASTER]
+
+jobs=4
+
+[MESSAGES CONTROL]
+
+[REFACTORING]
+
+[SPELLING]
+
+[VARIABLES]
+
+[BASIC]
+
+# Good variable names which should always be accepted, separated by a comma.
+good-names=a,
+           b,
+           c,
+           d,
+           e,
+           f,
+           g,
+           h,
+           i,
+           j,
+           k,
+           l,
+           m,
+           n,
+           o,
+           p,
+           q,
+           r,
+           s,
+           t,
+           u,
+           v,
+           w,
+           x,
+           y,
+           z,
+           ex,
+           Run,
+           _
+
+[STRING]
+
+check-quote-consistency=yes
+
+[LOGGING]
+
+[MISCELLANEOUS]
+
+
+[FORMAT]
+
+
+[TYPECHECK]
+
+
+[SIMILARITIES]
+
+
+
+[CLASSES]
+
+
+[IMPORTS]
+
+
+
+[DESIGN]
+
+
+
+[EXCEPTIONS]
+

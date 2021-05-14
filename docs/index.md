@@ -38,3 +38,5 @@ or some such attached:
 * [Gcalcli](gcalcli.html) command line client for google calendar
 * [systemd](systemd.html) is a notorious system daemon that actually has user
   configurations stuffs
+* [pylint](pylint.html) is a good linter for python with few odd defaults to
+  sort out
