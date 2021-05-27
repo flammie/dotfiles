@@ -40,3 +40,4 @@ or some such attached:
   configurations stuffs
 * [pylint](pylint.html) is a good linter for python with few odd defaults to
   sort out
+* [dunst](dunst.html) is a good lightweight desktop notification thingy

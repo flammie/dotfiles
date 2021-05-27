@@ -1,0 +1,10 @@
+[global]
+    monitor = 0
+    geometry = "300x5-30+20"
+    separator_color = auto
+    font = Source Code Pro 12
+    format = "<i>%a</i>: <b>%s</b> %p\n%b"
+    corner_radius = 3
+
+
+# vim: ft=cfg
