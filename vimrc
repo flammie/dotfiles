@@ -10,6 +10,7 @@ Plugin 'dpelle/vim-LanguageTool'
 Plugin 'w0rp/ale'
 Plugin 'flammie/vim-finitestatemorphology'
 Plugin 'flammie/vim-conllu'
+Plugin 'flammie/vim-unicode-whitespace'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'vim-scripts/po.vim--gray'
 Plugin 'editorconfig/editorconfig-vim'
@@ -53,6 +54,7 @@ syntax enable
 syntax sync minlines=256
 set synmaxcol=128
 set redrawtime=10000
+set cole=1
 command W w
 command Wq wq
 command Q q
@@ -101,7 +103,7 @@ let g:ale_conllu_validate_options = '--lang krl'
 "let g:ale_lint_on_enter = 0
 "let g:ale_lint_on_save = 0
 let g:ale_linters = {
-    \ 'c++': ['cc', 'ccls', 'clangtidy', 'clazy', 'cppcheck',
+    \ 'cpp': ['cc', 'ccls', 'clazy', 'cppcheck',
     \         'cpplint', 'cquery', 'flawfinder']
 \}
 " indent guides
