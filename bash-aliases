@@ -31,6 +31,10 @@ alias vless='/usr/share/vim/vim??/macros/less.sh'
 # since imapfilter is slow, I want to see stuff
 alias imapfilter='imapfilter -v'
 
+# yeah working with libtool stuff :-/
+alias ltvalgrind='libtool --mode=execute valgrind'
+alias ltgdb='libtool --mode=execute gdb'
+
 # apt-cache search is overly eager
 apt-search() {
     apt-cache search $@ | fgrep $@
