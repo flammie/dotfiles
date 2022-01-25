@@ -17,6 +17,9 @@ the layout. For Russian I need phonetic variant since I cannot be bothered to
 learn new layout. The default changing keys are usually like shift-ctrl or
 alt-space, things that you hit accidentally way too often, I prefer double
 shifts, there's nearly never a need to hit them otherwise.
+The `setxkbmap` command works well in windowing system's startup, could be
+`xinitrc` or such, I use `.config/i3/autostart.sh` for i3 specifically, started
+by `.config/i3/config`.
 
 If you use `systemd` the `localectl` can be used to set xkbmaps as well:
 
