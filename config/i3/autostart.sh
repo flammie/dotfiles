@@ -17,4 +17,5 @@ synclient AccelFactor=0.110
 #bash $HOME/.screenlayout/rotate-left.sh
 feh --bg-max --randomize "$(xdg-user-dir PICTURES)/"
 redshift-gtk &
+setxkbmap -layout fi,ru,no -variant ,phonetic, -option grp:shifts_toggle
 gxkb &
