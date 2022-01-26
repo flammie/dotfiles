@@ -28,7 +28,11 @@ localectl -set-x11-keymap fi,en,ru pc104 ,,ru
 ```
 
 yeah localectl wants to know the keyboard model, you can try find it in the list
-but something like pc10X is probably ok.
+but something like pc10X is probably ok. It seems that systemd's localectl at
+least now (2022) writes a profoundly stupid Xorg configuration that forces all
+plugged in input devices to be keyboards and reset keyboard settings (e.g.
+headphones with volume button). So probably better to just delete
+`/etc/X11/xorg.conf.d/00-keyboard.conf` afterwards.
 
 If you don't use desktop environment with keyboard applet it can be cool to see
 which keyboard is activated, this is exactly the only function of `gxkb`. With
