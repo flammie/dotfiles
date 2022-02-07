@@ -23,13 +23,15 @@ or some such attached:
   * [pureline](pureline.html)
 * [mailcap](mailcap.html)
 * [editorconfig](editorconfig.html)
-* **gnome-terminal**, which does not have dotfiles but only a sad binary blob,
+* terms:
+  * ~~gnome-terminal~~, which does not have dotfiles but only a sad binary blob,
   (I'd rather use any other terminal but they get discontinued or lack features:
-  * [rxvt-unicode](rxvt-unicode.html), which ironically lacks unicode support
+  * ~~[rxvt-unicode](rxvt-unicode.html)~~, which ironically lacks unicode support
   * termite, which doesn't work without monkeypatched vte that is a PITA to keep
     up with
-  * roxterm, which is discontinued
-  * sakura, had some bugs and unresponsive upstream)
+  * ~~roxterm~~, which is discontinued
+  * ~~sakura~, has some serious bugs and unresponsive upstream
+  * [kitty](kitty.html) a modern GPU-optimised(!) terminal
 * [rclone](rclone.html), a command-line interface for cloud backup, like rsync
 * [rust](rust.html), a programming language with bundled package management
   unhappy face
