@@ -19,20 +19,23 @@ alt-space, things that you hit accidentally way too often, I prefer double
 shifts, there's nearly never a need to hit them otherwise.
 The `setxkbmap` command works well in windowing system's startup, could be
 `xinitrc` or such, I use `.config/i3/autostart.sh` for i3 specifically, started
-by `.config/i3/config`.
+by `.config/i3/config`... which for some reason does not always stick. Often you
+have to chant the `setxkbmap` from command line anyways.
 
 If you use `systemd` the `localectl` can be used to set xkbmaps as well:
 
 ```
-localectl -set-x11-keymap fi,en,ru pc104 ,,ru
+localectl -set-x11-keymap fi,en,ru pc104 ,,phonetic
 ```
 
-yeah localectl wants to know the keyboard model, you can try find it in the list
+ocalectl wants to know the keyboard model, you can try find it in the list
 but something like pc10X is probably ok. It seems that systemd's localectl at
 least now (2022) writes a profoundly stupid Xorg configuration that forces all
 plugged in input devices to be keyboards and reset keyboard settings (e.g.
 headphones with volume button). So probably better to just delete
 `/etc/X11/xorg.conf.d/00-keyboard.conf` afterwards.
+
+- - -
 
 If you don't use desktop environment with keyboard applet it can be cool to see
 which keyboard is activated, this is exactly the only function of `gxkb`. With
@@ -48,4 +51,5 @@ variants=,,phonetic
 toggle_option=grp:shifts_toggle
 ```
 
-
+And gxkb uses some ugly ass [flags as language
+codes](http://www.flagsarenotlanguages.com/blog/).
