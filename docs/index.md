@@ -5,8 +5,9 @@ configuration files in unix-style systems. They are in your home directory
 (`$HOME` or `~`) and the filename starts with a full stop, that is also called
 a dot in some circles.
 
-The dot is omitted [in the git repo](https://github.com/flammie/dotfiles/),
-there's a partial script to sync home directory and dotfiles repo as well.
+The dot is omitted from the names within [the git repo
+dotfiles](https://github.com/flammie/dotfiles/), there's a partial script to
+sync home directory and dotfiles repo as well.
 
 ## Configurations per app
 
@@ -43,3 +44,5 @@ or some such attached:
 * [pylint](pylint.html) is a good linter for python with few odd defaults to
   sort out
 * [dunst](dunst.html) is a good lightweight desktop notification thingy
+* [xscreensaver](xscreensaver.html) and screen lockers without desktop
+  environment
