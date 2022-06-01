@@ -1,8 +1,9 @@
 export EDITOR=vim
-export TERMINAL=gnome-terminal
+#export TERMINAL=gnome-terminal
+export TERMINAL=kitty
 export BROWSER=chromium
 export CPATH=/opt/local/include:/usr/local/include:/usr/include
-export PKG_CONFIG_PATH=/opt/local/lib/pkgconfig:/opt/local/share/pkgconfig:/usr/local/lib/pkgconfig:/usr/local/share/pkgconfig:$HOME/lib/pkgconfig:$HOME/share/pkgconfig
+export PKG_CONFIG_PATH=/opt/local/lib/pkgconfig:/opt/local/share/pkgconfig:/usr/local/lib/pkgconfig:/usr/local/share/pkgconfig:$HOME/lib/pkgconfig:$HOME/share/pkgconfig:/usr/lib/pkgconfig:/usr/share/pkgconfig
 export CFLAGS="-O2 -march=native -ggdb -Wall -Wextra "
 export CXXFLAGS="${CFLAGS}"
 export LC_ALL=fi_FI.UTF-8
@@ -15,13 +16,17 @@ export JAVA_HOME=/usr/lib/jvm/default-java
 export FEDORA_HOME=/var/fedora
 export CLASSPATH=.:./src/main/
 export GTK_THEME=Adwaita:dark
-export PYTHONPATH=/usr/local/lib/python3.7/site-packages:/opt/local/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages:${PYTHONPATH}
+PYVER=3.9
+export PYTHONPATH=/usr/local/lib/python$PYVER/site-packages:/opt/local/Library/Frameworks/Python.framework/Versions/$PYVER/lib/python$PYVER/site-packages:${PYTHONPATH}
 export ACLOCAL_PATH=/usr/local/share/aclocal:/opt/local/share/aclocal:/usr/share/aclocal
+export RUST_LOG=info
+export XSECURELOCK_SAVER=saver_xscreensaver
 
 # divvun / giella spesifisk:
 export GIELLA_LIBS=${HOME}/giella-libs/
+export GIELLA_TEMPLATES=${HOME}/langtech/giella-templates/
 export GTLANGS=$HOME/github/giellalt/
 export GTHOME=$HOME/github/giellalt/giella-core/
 export GTCORE=$HOME/langtech/
 export GTFREE=$HOME/freecorpus
-export GTBOUND=$HOME/boundcorpus 
+export GTBOUND=$HOME/boundcorpus
