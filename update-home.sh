@@ -1,8 +1,16 @@
 #!/bin/bash
 for f in * ; do
-    homef=${HOME}/.${f} 
+    homef=${HOME}/.${f}
     if test -d ${f} ; then
         echo Skipping directory $f
+        continue
+    elif test x$f = xREADME ; then
+        continue
+    elif test x$f = xupdate-home.sh ; then
+        continue
+    elif test x$f = xupdate-dotfiles.sh ; then
+        continue
+    elif test x$f = xdotfileblacklist ; then
         continue
     fi
     if ! diff -Nu ${homef} ${f} ; then

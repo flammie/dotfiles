@@ -36,6 +36,7 @@
 .gf_history
 .ghc
 .gnupg
+.gpg
 .gradle
 .imapfilter
 .ivy2
@@ -55,6 +56,7 @@
 .python_history
 .renpy
 .rustup
+.ssh
 .swn
 .swo
 .swp
