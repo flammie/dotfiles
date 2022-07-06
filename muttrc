@@ -52,7 +52,7 @@ hdr_order Subject: From: To: Cc: Bcc: Date: Organization: User-Agent: X-Mailer: 
 #
 # gpg
 set pgp_autosign = yes
-set pgp_sign_as = 0xE8AC6EF6C0F23C66 
+set pgp_sign_as = A78F7092724E72D38981203CCEAF4D20913446FC
 set pgp_replyencrypt = yes
 set pgp_use_gpg_agent = yes
 set crypt_use_gpgme = yes
