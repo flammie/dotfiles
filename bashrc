@@ -50,8 +50,8 @@ source ${HOME}/.bash-env
 
 # WSL stuffs
 if grep -F -q WSL2 /proc/version ; then
-    LIBGL_ALWAYS_INDIRECT=1
-    DISPLAY=$(route.exe print | grep 0.0.0.0 | head -1 | awk '{print $4}'):0.0
+    #LIBGL_ALWAYS_INDIRECT=1
+    #DISPLAY=$(route.exe print | grep 0.0.0.0 | head -1 | awk '{print $4}'):0.0
     XKBLAYOUT=fi
 fi
 
@@ -66,3 +66,5 @@ sep=$'\u276F'
 export PS1="${PS1/\\h/\\[\\033[01;37m\\]${SHOWHOST}${sep}\\[\\033[01;33m\\]\\h}"
 source ~/github/flammie/pureline/pureline ~/.pureline.conf
 eval $(thefuck --alias)
+
+
