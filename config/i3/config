@@ -96,5 +96,7 @@ bindsym $mod+Shift+p exec "clementine --play-pause"
 bar {
         status_command i3status
 }
+
+exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id setxkbmp fi,ru,no -variant ,phonetic, -option grp:shifts_toggle
 exec --no-startup-id ~/.config/i3/autostart.sh
