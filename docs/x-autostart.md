@@ -1,5 +1,8 @@
 # Flammie's dotfiles: X autostarting
 
+Dex is good for handling autostart even outside Gnome et al.: `dex --autostart
+--environment i3`.
+
 ## For I3
 
 I3 is not really a multimedia desktop, I execute a script called `autostart.sh`
@@ -9,10 +12,13 @@ from i3 config like so:
 exec --no-startup-id ~/.config/i3.autostart.sh
 ```
 
-This will execute the screen locker using `xss-lock` and `i3-lock`:
+This will execute the screen locker using `xidlehook` and `xsecurelock`:
 
 ```
-xss-lock -l -- ~/.config/i3/i3lock.sh &
+xidlehook --not-when-fullscreen --not-when-audio \
+    --timer 60 ̈́'/usr/libexec/xsecurelock/dimmer' ''\
+    --timer 10 'xsecurelock' ''\
+    --timer 900 'systemctl suspend' '' &
 ```
 
 On laptops you need to "autostart" synaptics touchpad settings:
@@ -48,3 +54,6 @@ Definitely always run [redshift]() on every system you use to sleep better:
 ```
 redshift-gtk &
 ```
+
+If you don't run dex or anything that's not in dex can go here as well: `teams`,
+`steam`, `skypeforlinux`, `telegram-desktop`...
