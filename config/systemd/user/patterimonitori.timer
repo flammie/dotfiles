@@ -1,0 +1,10 @@
+[Unit]
+Description=Ajoittain katotaan josko patteria on liian vähän
+
+[Timer]
+AccuracySec=1sec
+OnStartupSec=30sec
+OnUnitActiveSec=1min
+
+[Install]
+WantedBy=timers.target

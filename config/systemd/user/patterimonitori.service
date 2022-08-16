@@ -1,0 +1,14 @@
+[Unit]
+Description=Kertoo jos patteria on liian vähän
+
+[Service]
+RuntimeDirectory=patterimonitori
+RuntimeDirectoryPreserve=yes
+WorkingDirectory=%t/patterimonitori
+Type=oneshot
+Environment=DISPLAY=:0
+Environment=XAUTHORITY=%h/.Xauthority
+ExecStart=/bin/bash %h/bin/battery-monitor.bash
+
+[Install]
+WantedBy=patterimonitori.timer
