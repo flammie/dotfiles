@@ -1,6 +1,7 @@
 export EDITOR=vim
 #export TERMINAL=gnome-terminal
 export TERMINAL=kitty
+#export TERMINAL=xterm
 export BROWSER=chromium
 export CPATH=/opt/local/include:/usr/local/include:/usr/include
 export PKG_CONFIG_PATH=/opt/local/lib/pkgconfig:/opt/local/share/pkgconfig:/usr/local/lib/pkgconfig:/usr/local/share/pkgconfig:$HOME/lib/pkgconfig:$HOME/share/pkgconfig:/usr/lib/pkgconfig:/usr/share/pkgconfig
@@ -12,15 +13,18 @@ export PATH=/opt/local/bin/:${HOME}/bin/:${HOME}/.local/bin/:${HOME}/.config/com
 export YFLAGS=-v
 export ECHANGELOG_USER="Flammie Pirinen <flammie@gentoo.org>"
 export MAILER=mutt
-export JAVA_HOME=/usr/lib/jvm/default-java
+#export JAVA_HOME=/usr/lib/jvm/default-java
 export FEDORA_HOME=/var/fedora
 export CLASSPATH=.:./src/main/
 export GTK_THEME=Adwaita:dark
-PYVER=3.9
+PYVER=3.10
 export PYTHONPATH=/usr/local/lib/python$PYVER/site-packages:/opt/local/Library/Frameworks/Python.framework/Versions/$PYVER/lib/python$PYVER/site-packages:${PYTHONPATH}
 export ACLOCAL_PATH=/usr/local/share/aclocal:/opt/local/share/aclocal:/usr/share/aclocal
 export RUST_LOG=info
 export XSECURELOCK_SAVER=saver_xscreensaver
+export XSECURELOCK_PASSWORD_PROMPT=emoji
+# intel bug? https://wiki.archlinux.org/title/intel_graphics#DRI3_issues
+export LIBGL_DRI3_DISABLE=1
 
 # divvun / giella spesifisk:
 export GIELLA_LIBS=${HOME}/giella-libs/
