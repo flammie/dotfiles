@@ -1,0 +1,9 @@
+[Default Applications]
+x-scheme-handler/tg=userapp-Telegram Desktop-28LWP1.desktop
+x-scheme-handler/msteams=teams.desktop
+x-scheme-handler/mailto=firefox-esr.desktop
+x-scheme-handler/http=firefox-esr.desktop
+x-scheme-handler/https=firefox-esr.desktop
+
+[Added Associations]
+x-scheme-handler/tg=userapp-Telegram Desktop-28LWP1.desktop;
