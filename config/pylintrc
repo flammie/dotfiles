@@ -4,6 +4,8 @@ jobs=4
 
 [MESSAGES CONTROL]
 
+disable=no-else-continue
+
 [REFACTORING]
 
 [SPELLING]
