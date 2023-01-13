@@ -54,5 +54,6 @@ takes more to read in and process. The if-elif-else is a logical and complete
 block here and should be held together. The people using second approach usually
 insist on using empty line separators to make it clear where the block ends
 instead anyways and those are already harder to understand and at more risk of
-getting mangled accidentally.
-
+getting mangled accidentally. (In some better languages there is a match
+statement for path-complete iffing neatly, with python you should always stick
+with complete if coverage.)
