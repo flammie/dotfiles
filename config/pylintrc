@@ -4,7 +4,7 @@ jobs=4
 
 [MESSAGES CONTROL]
 
-disable=no-else-continue
+disable=no-else-continue, no-else-break, no-else-return
 
 [REFACTORING]
 
