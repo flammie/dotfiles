@@ -35,6 +35,12 @@ alias imapfilter='imapfilter -v'
 alias ltvalgrind='libtool --mode=execute valgrind'
 alias ltgdb='libtool --mode=execute gdb'
 
+# it is time
+alias sudo='doas'
+
+# oh
+alias prime-run='__NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia'
+
 # apt-cache search is overly eager
 apt-search() {
     apt-cache search $@ | fgrep $@

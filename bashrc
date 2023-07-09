@@ -66,5 +66,6 @@ sep=$'\u276F'
 export PS1="${PS1/\\h/\\[\\033[01;37m\\]${SHOWHOST}${sep}\\[\\033[01;33m\\]\\h}"
 source ~/github/flammie/pureline/pureline ~/.pureline.conf
 eval $(thefuck --alias)
+complete -cf doas
 
 
