@@ -12,6 +12,8 @@
 .android
 .annis
 .anyconnect
+.audacity
+.audacity-data
 .bash_history
 .bash_sessions
 .bitcoin
@@ -48,6 +50,7 @@
 .mutt
 .opera
 .password-store
+.password-store-backup
 .pki
 .pornview
 .pre-commit
@@ -68,4 +71,6 @@
 .viminfo
 .wine
 .xsession-errors
+.zoom
+.zotero
 .zsh_history
