@@ -5,11 +5,12 @@ folder-hook 'senv546.uni-hamburg.de' 'source ~/.muttrc-uhh'
 
 # Default account
 # GMAIL
-# source ~/.muttrc-gmail
+source ~/.muttrc-gmail
 # UiT
-source ~/.muttrc-uit
+# source ~/.muttrc-uit
 # UHH
 # source ~/.muttrc-uhh
+
 
 # Macros for switching accounts
 macro index <f2> '<sync-mailbox><enter-command>source ~/.muttrc-gmail<enter><change-folder>imaps://imap.gmail.com/<enter>'

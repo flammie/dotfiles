@@ -19,6 +19,7 @@ Plugin 'itchyny/lightline.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'cespare/vim-toml'
+Plugin 'chrisbra/unicode.vim'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -34,7 +35,7 @@ set nu
 set numberwidth=4
 set modeline
 set modelines=5
-set cinoptions=>4,n-2,{2,:2,=2,g0,h2,p5,t0,+2,(0,u0,w1,m1,f2,t0
+set cinoptions=>4,n-2,:2,=2,g0,h2,p5,t0,+2,(0,u0,w1,m1,t0
 set cursorline
 set colorcolumn=72,80,100
 set showmatch

@@ -2,7 +2,7 @@ export EDITOR=vim
 #export TERMINAL=gnome-terminal
 export TERMINAL=kitty
 #export TERMINAL=xterm
-export BROWSER=chromium
+export BROWSER=firefox
 export CPATH=/opt/local/include:/usr/local/include:/usr/include
 export PKG_CONFIG_PATH=/opt/local/lib/pkgconfig:/opt/local/share/pkgconfig:/usr/local/lib/pkgconfig:/usr/local/share/pkgconfig:$HOME/lib/pkgconfig:$HOME/share/pkgconfig:/usr/lib/pkgconfig:/usr/share/pkgconfig
 export CFLAGS="-O2 -march=native -ggdb -Wall -Wextra "
@@ -17,12 +17,12 @@ export MAILER=mutt
 export FEDORA_HOME=/var/fedora
 export CLASSPATH=.:./src/main/
 export GTK_THEME=Adwaita:dark
-PYVER=3.10
+PYVER=3.11
 export PYTHONPATH=/usr/local/lib/python$PYVER/site-packages:/opt/local/Library/Frameworks/Python.framework/Versions/$PYVER/lib/python$PYVER/site-packages:${PYTHONPATH}
 export ACLOCAL_PATH=/usr/local/share/aclocal:/opt/local/share/aclocal:/usr/share/aclocal
-export RUST_LOG=info
+export RUST_LOG="info,gut=debug"
 export XSECURELOCK_SAVER=saver_xscreensaver
-export XSECURELOCK_PASSWORD_PROMPT=emoji
+export XSECURELOCK_PASSWORD_PROMPT=disco
 # intel bug? https://wiki.archlinux.org/title/intel_graphics#DRI3_issues
 export LIBGL_DRI3_DISABLE=1
 
