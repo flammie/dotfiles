@@ -22,7 +22,7 @@ export PYTHONPATH=/usr/local/lib/python$PYVER/site-packages:/opt/local/Library/F
 export ACLOCAL_PATH=/usr/local/share/aclocal:/opt/local/share/aclocal:/usr/share/aclocal
 export RUST_LOG="info,gut=debug"
 export XSECURELOCK_SAVER=saver_xscreensaver
-export XSECURELOCK_PASSWORD_PROMPT=disco
+#export XSECURELOCK_PASSWORD_PROMPT=emoji
 # intel bug? https://wiki.archlinux.org/title/intel_graphics#DRI3_issues
 export LIBGL_DRI3_DISABLE=1
 
