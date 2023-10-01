@@ -22,7 +22,6 @@ or some such attached:
 * [i3](i3.html)
 * [powerline](powerline.html), partially replaced with:
   * [pureline](pureline.html)
-* [mailcap](mailcap.html)
 * [editorconfig](editorconfig.html)
 * terms:
   * ~~gnome-terminal~~, which does not have dotfiles but only a sad binary blob,
@@ -31,9 +30,10 @@ or some such attached:
   * termite, which doesn't work without monkeypatched vte that is a PITA to keep
     up with
   * ~~roxterm~~, which is discontinued
-  * ~~sakura~, has some serious bugs and unresponsive upstream
+  * ~~sakura~~, has some serious bugs and unresponsive upstream
   * [kitty](kitty.html) a modern GPU-optimised(!) terminal
-* [rclone](rclone.html), a command-line interface for cloud backup, like rsync
+* [rclone](rclone.html), a command-line interface for cloud backup, like
+   rsync for dropbox, ~~google drive~~, etc.
 * [rust](rust.html), a programming language with bundled package management
   unhappy face
 * [autostart on X](x-autostart.html) scripts to autorun on X startup and how
@@ -46,3 +46,6 @@ or some such attached:
 * [dunst](dunst.html) is a good lightweight desktop notification thingy
 * [xscreensaver](xscreensaver.html) and screen lockers without desktop
   environment
+* controlling default apps without a DE:
+  * [mimeapps](mimeapps.html)
+  * [mailcap](mailcap.html)
