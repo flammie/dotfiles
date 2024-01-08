@@ -131,4 +131,5 @@ let g:lightline = {
       \ },
       \ }
 
-
+" gitgutter against huge files
+let g:gitgutter_max_signs = 5000
