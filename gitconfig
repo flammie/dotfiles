@@ -18,8 +18,13 @@
     required = true
     clean = git-lfs clean -- %f
 [pull]
-    ff = only
+	ff = only
 [commit]
     gpgsign = true
 [init]
     defaultBranch = main
+[diff]
+	colorMoved = zebra
+[blame]
+	showEmail = true
+	date = short
