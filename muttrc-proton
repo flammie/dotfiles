@@ -1,0 +1,29 @@
+# proton mail bridge
+
+set ssl_starttls=yes
+set ssl_force_tls=yes
+set imap_user='ffflammie@proton.me'
+set imap_pass=`pass proton-imap`
+set realname = 'Flammie A Pirinen'
+set from = 'ffflammie@proton.me'
+set signature = ~/.signature
+
+# set certificate_file=~/.mutt/certificates/proton
+
+set smtp_pass=`pass proton-smtp`
+set smtp_url="smtp://ffflammie\@proton.me@127.0.0.1:1025"
+
+set folder= "imap://localhost:1143"
+set spoolfile = "imap://localhost:1143/INBOX"
+set postponed = "imap://localhost:1143/Drafts"
+set mbox = "imap://localhost:1143/All Mail"
+set record = "imap://localhost:1143/Sent"
+set trash = "imap://localhost:1143/Trash"
+set imap_list_subscribed=yes
+set imap_check_subscribed=yes
+
+set move = no
+unset use_domain
+
+set header_cache=~/.mutt/proton/cache/headers
+set message_cachedir=~/.mutt/proton/cache/bodies
