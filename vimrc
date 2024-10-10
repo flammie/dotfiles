@@ -95,6 +95,10 @@ let g:syntastic_check_on_wq = 0
 let g:ale_open_list = 1
 let g:ale_set_loclist = 1
 let g:ale_set_quickfix = 0
+aug QFClose
+  au!
+  au WinEnter * if winnr('$') == 1 && &buftype == "quickfix"|q|endif
+aug END
 " let g:ale_lint_delay = 6400
 let g:ale_lint_on_text_change = 'never'
 let g:ale_lint_on_enter = 1
