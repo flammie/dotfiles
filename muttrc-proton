@@ -5,13 +5,19 @@ set ssl_force_tls=yes
 set imap_user='ffflammie@proton.me'
 set imap_pass=`pass proton-imap`
 set realname = 'Flammie A Pirinen'
-set from = 'ffflammie@proton.me'
+#set from = 'ffflammie@proton.me'
+set from = 'flammie@iki.fi'
 set signature = ~/.signature
 
 # set certificate_file=~/.mutt/certificates/proton
 
-set smtp_pass=`pass proton-smtp`
-set smtp_url="smtp://ffflammie\@proton.me@127.0.0.1:1025"
+#set smtp_pass=`pass proton-smtp`
+#set smtp_url="smtp://ffflammie\@proton.me@127.0.0.1:1025"
+
+set smtp_url = 'smtp://flammie@smtp.iki.fi:587'
+set smtp_pass = "`pass iki-smtp`"
+set use_envelope_from=yes
+set envelope_from_address="flammie@iki.fi"
 
 set folder= "imap://localhost:1143"
 set spoolfile = "imap://localhost:1143/INBOX"
