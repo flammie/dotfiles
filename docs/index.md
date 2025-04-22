@@ -6,7 +6,7 @@ configuration files in unix-style systems. They are in your home directory
 a dot in some circles.
 
 The dot is omitted from the names within [the git repo
-dotfiles](https://github.com/flammie/dotfiles/), there's a partial script to
+dotfiles](https://github.com/flammie/dotfiles/), there’s a partial script to
 sync home directory and dotfiles repo as well.
 
 ## Configurations per app
