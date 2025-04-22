@@ -28,10 +28,10 @@ export XSECURELOCK_SAVER=saver_xscreensaver
 
 # divvun / giella spesifisk:
 export GIELLA_LIBS=${HOME}/giella-libs/
-export GIELLA_TEMPLATES=${HOME}/langtech/giella-templates/
+export GIELLA_TEMPLATES=${HOME}/github/giellalt/giella-templates/
 export GTLANGS=$HOME/github/giellalt/
 export GTHOME=$HOME/github/giellalt/giella-core/
-export GTCORE=$HOME/langtech/
+export GTCORE=$HOME/github/giellalt/giella-core/
 export GTFREE=$HOME/freecorpus
 export GTBOUND=$HOME/boundcorpus
 # perl sftegsradvg
