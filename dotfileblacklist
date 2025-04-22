@@ -48,6 +48,7 @@
 .macromedia
 .mozilla
 .mutt
+.npm
 .opera
 .password-store
 .password-store-backup
@@ -63,6 +64,7 @@
 .swn
 .swo
 .swp
+.texlive
 .theano
 .themes
 .thumbnails
