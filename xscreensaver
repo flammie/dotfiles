@@ -1,5 +1,5 @@
 # XScreenSaver Preferences File
-# Written by xscreensaver-settings 6.08 for flammie on Fri Jul  5 14:03:03 2024.
+# Written by xscreensaver-settings 6.08 for flammie on Tue Oct 22 01:51:26 2024.
 # https://www.jwz.org/xscreensaver/
 
 timeout:	0:10:00
@@ -37,7 +37,7 @@ textFile:	/etc/gentoo-release
 textProgram:	fortune
 textURL:	https://planet.gentoo.org/rss20.xml
 dialogTheme:	default
-settingsGeom:	960,0 -1,-1
+settingsGeom:	960,0 775,335
 
 programs:								      \
 -				maze --root				    \n\
@@ -87,7 +87,7 @@ programs:								      \
 -				strange --root				    \n\
 -				swirl --root				    \n\
 -				triangle --root				    \n\
-				xjack --root				    \n\
+-				xjack --root				    \n\
 -				xlyap --root				    \n\
 - GL: 				atlantis --root				    \n\
 -				bsod --root				    \n\
@@ -292,7 +292,7 @@ programs:								      \
 - GL: 				cubocteversion --root			    \n\
 -				droste --root				    \n\
 - GL: 				papercube --root			    \n\
-  GL: 				skulloop --root				    \n\
+- GL: 				skulloop --root				    \n\
 
 
 pointerHysteresis:  10
