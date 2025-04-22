@@ -1,4 +1,4 @@
-export PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME%%.*}:${PWD/$HOME/~}\007"'
+export PROMPT_COMMAND+=('echo -ne "\033]0;${USER}@${HOSTNAME%%.*}:${PWD/$HOME/~}\007"')
 sep=$'\u276F'
 export PS1="\[\033[01;32m\]\u${sep}\h\[\033[01;34m\]${sep}\w\[\033[01;36m\]${sep}(\!)\[\033[01;40m\]${sep}\t${sep}\[\033[00m\]\n\$${sep} "
 export CLICOLOR=1
