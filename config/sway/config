@@ -226,3 +226,5 @@ bar {
 
 
 include /etc/sway/config.d/*
+
+exec ~/.config/sway/autostart.sh
