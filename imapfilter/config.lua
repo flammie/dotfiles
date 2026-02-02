@@ -1,16 +1,22 @@
 options.subscribe = true
---options.charset = 'UTF-8' -- MS exchange supports us-ascii...
+options.charset = 'UTF-8' -- MS exchange supports us-ascii...
 options.create = true
+options.starttls = true
+options.certificates = false
+options.hostnames = false  -- proton bridge on localhost fails hostname?
 
 -- get passwords from pass manager
 -- _, passuit = pipe_from("pass uit.no")
 _, passgmail = pipe_from("pass gmail")
 -- _, passuhh = pipe_from("pass uni-hamburg-uhh")
+_, passproton = pipe_from("pass proton-imap")
+
 
 -- trim whitespace... some imaps mind it, some dont'
 -- _, _, passuit = string.find(passuit, '([%w%p]+)')
 _, _, passgmail = string.find(passgmail, '([%w%p]+)')
 -- _, _, passuhh = string.find(passuhh, '([%w%p]+)')
+_, _, passproton = string.find(passproton, '([%w%p]+)')
 
 -- my work email account
 -- uit = IMAP {
@@ -20,13 +26,6 @@ _, _, passgmail = string.find(passgmail, '([%w%p]+)')
 --     ssl = 'tls'
 -- }
 
--- google acc
-gmail = IMAP {
-    server = 'imap.gmail.com',
-    username = 'ffflammie@gmail.com',
-    password = passgmail,
-    ssl = 'tls1',
-}
 
 -- my old work email account
 -- uhh = IMAP {
@@ -36,7 +35,24 @@ gmail = IMAP {
 --     ssl = 'tls'
 -- }
 
-newm = gmail['INBOX']:is_unseen()
+proton = IMAP {
+    server = 'localhost',
+    username = 'ffflammie@proton.me',
+    password = passproton,
+    -- ssl = 'auto',
+    port = 1143,
+}
+
+-- google acc
+--gmail = IMAP {
+--    server = 'imap.gmail.com',
+--    username = 'ffflammie@gmail.com',
+--    password = passgmail,
+--    ssl = 'tls1',
+--}
+
+newp = proton['INBOX']:is_unseen()
+-- newm = gmail['INBOX']:is_unseen()
 
 -- UHH old block:
 --
@@ -89,49 +105,60 @@ newm = gmail['INBOX']:is_unseen()
 
 -- Gmail block:
 -- To: samicvs@gtsvn.uit.no
-giellacommits = newm:contain_to("samicvs@localhost.uit.no")
-giellacommits:move_messages(gmail["imapfiltered/versiondiffs"])
-giellacommits = newm:contain_to("samicvs@gtsvn.uit.no")
-giellacommits:move_messages(gmail["imapfiltered/versiondiffs"])
-gsoc = newm:contain_to("google-summer-of-code-mentors-list@googlegroups.com")
-gsoc:move_messages(gmail["imapfiltered/lists"])
-tesseract = newm:contain_to("tesseract-ocr@googlegroups.com")
-tesseract:move_messages(gmail["imapfiltered/lists"])
+--giellacommits = newm:contain_to("samicvs@localhost.uit.no")
+--giellacommits:move_messages(gmail["imapfiltered/versiondiffs"])
+--giellacommits = newm:contain_to("samicvs@gtsvn.uit.no")
+--giellacommits:move_messages(gmail["imapfiltered/versiondiffs"])
+--gsoc = newm:contain_to("google-summer-of-code-mentors-list@googlegroups.com")
+--gsoc:move_messages(gmail["imapfiltered/lists"])
+--tesseract = newm:contain_to("tesseract-ocr@googlegroups.com")
+--tesseract:move_messages(gmail["imapfiltered/lists"])
 -- To: unicode@corp.unicode.org
-unicodes = newm:contain_from('unicode@unicode.org')
-unicodes:move_messages(gmail['imapfiltered/lists'])
-unicodes = newm:contain_to('unicode@corp.unicode.org')
-unicodes:move_messages(gmail['imapfiltered/lists'])
+--unicodes = newm:contain_from('unicode@unicode.org')
+--unicodes:move_messages(gmail['imapfiltered/lists'])
+--unicodes = newm:contain_to('unicode@corp.unicode.org')
+--unicodes:move_messages(gmail['imapfiltered/lists'])
 
-gcinag = newm:contain_from("codein-noreply@google.com")
-gcinag:move_messages(gmail["imapfiltered/gci"])
-gf = newm:contain_to("gf-dev@googlegroups.com")
-gf:move_messages(gmail["imapfiltered/lists"])
-apes = newm:contain_to("apertium-stuff@lists.sourceforge.net")
-apes:move_messages(gmail["imapfiltered/lists"])
+--gcinag = newm:contain_from("codein-noreply@google.com")
+--gcinag:move_messages(gmail["imapfiltered/gci"])
+--gf = newm:contain_to("gf-dev@googlegroups.com")
+--gf:move_messages(gmail["imapfiltered/lists"])
+--apes = newm:contain_to("apertium-stuff@lists.sourceforge.net")
+--apes:move_messages(gmail["imapfiltered/lists"])
 
 -- github stuff
-githubs = newm:contain_from("notifications@github.com")
-githubs:move_messages(gmail["imapfiltered/github"])
+--githubs = newm:contain_from("notifications@github.com")
+--githubs:move_messages(gmail["imapfiltered/github"])
+githubp = newp:contain_from("notifications@github.com")
+githubp:move_messages(proton["githubs"])
 
-giellacommits = newm:contain_from('noreply@github.com')
-giellacommits:move_messages(gmail['imapfiltered/commits'])
+-- quora stuff
+quora = newp:contain_from("english-personalized-digest@quora.com")
+quora:move_messages(proton["Folders/some"])
+quora = newp:contain_from("finnish-personalized-digest@quora.com")
+quora:move_messages(proton["Folders/some"])
+quora = newp:contain_from("norwegian-personalized-digest@quora.com")
+quora:move_messages(proton["Folders/some"])
+
+
+--giellacommits = newm:contain_from('noreply@github.com')
+--giellacommits:move_messages(gmail['imapfiltered/commits'])
 
 -- facebooks stuff
 -- From: Facebook-maininnat <mentions@facebookmail.com>
 -- From: Facebook <friendupdates@facebookmail.com>
-facebooks = newm:contain_from('notification@facebookmail.com')
-facebooks:move_messages(gmail['imapfiltered/somespam'])
-facebooks = newm:contain_from('mentions@facebookmail.com')
-facebooks:move_messages(gmail['imapfiltered/somespam'])
-facebooks = newm:contain_from('friendupdates@facebookmail.com')
-facebooks:move_messages(gmail['imapfiltered/somespam'])
+--facebooks = newm:contain_from('notification@facebookmail.com')
+--facebooks:move_messages(gmail['imapfiltered/somespam'])
+--facebooks = newm:contain_from('mentions@facebookmail.com')
+--facebooks:move_messages(gmail['imapfiltered/somespam'])
+--facebooks = newm:contain_from('friendupdates@facebookmail.com')
+--facebooks:move_messages(gmail['imapfiltered/somespam'])
 
 -- travis
 -- From: Travis CI <builds@travis-ci.com>
 
-traviscis = newm:contain_from('builds@travis-ci.com')
-traviscis:move_messages(gmail['imapfiltered/ci'])
+--traviscis = newm:contain_from('builds@travis-ci.com')
+--traviscis:move_messages(gmail['imapfiltered/ci'])
 
 -- Apple søppelpost
 -- applepkgs = uit['Søppelpost']:contain_from('no_reply@email.apple.com')
@@ -145,8 +172,8 @@ traviscis:move_messages(gmail['imapfiltered/ci'])
 
 -- wmt tasks
 -- Cc: wmt-tasks@googlegroups.com
-wmts = newm:contain_to("wmt-tasks@googlegroups.com")
-wmts:move_messages(gmail["imapfiltered/lists"])
+--wmts = newm:contain_to("wmt-tasks@googlegroups.com")
+--wmts:move_messages(gmail["imapfiltered/lists"])
 
 
 -- zulip missed
@@ -156,14 +183,14 @@ wmts:move_messages(gmail["imapfiltered/lists"])
 
 -- ps4 store
 -- From: PlayStation              <Sony@email.sonyentertainmentnetwork.com>
-ps4 = newm:contain_from("Sony@email.sonyentertainmentnetwork.com")
-ps4:move_messages(gmail["imapfiltered/bought"])
+--ps4 = newm:contain_from("Sony@email.sonyentertainmentnetwork.com")
+--ps4:move_messages(gmail["imapfiltered/bought"])
 -- From: PlayStation <reply@txn-email.playstation.com>
-psn = newm:contain_from("reply@txn-email.playstation.com")
-psn:move_messages(gmail["imapfiltered/bought"])
+--psn = newm:contain_from("reply@txn-email.playstation.com")
+--psn:move_messages(gmail["imapfiltered/bought"])
 
 -- tino's CI
 -- From: apertium-packaging@projectjj.com
-apepack = newm:contain_from('apertium-packaging@projectjj.com')
-apepack:move_messages(gmail['imapfiltered/ci'])
+--apepack = newm:contain_from('apertium-packaging@projectjj.com')
+--apepack:move_messages(gmail['imapfiltered/ci'])
 
