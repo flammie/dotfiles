@@ -6,7 +6,6 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'morhetz/gruvbox'
-Plugin 'dpelle/vim-LanguageTool'
 Plugin 'w0rp/ale'
 Plugin 'flammie/vim-apertium'
 Plugin 'flammie/vim-finitestatemorphology'
@@ -20,6 +19,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'cespare/vim-toml'
 Plugin 'chrisbra/unicode.vim'
+Plugin 'ggml-org/llama.vim'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -57,11 +57,17 @@ syntax sync minlines=256
 set synmaxcol=128
 set redrawtime=10000
 set cole=1
+" avoid fumbliness with : (which requires shift on Finnish keyboard)
 command W w
-command Wq wq
 command Q q
+command Wq wq
+command WQ wq
+" avoid other kind of fumbliness
 map u <Nop>
 map U :undo<CR>
+" also if you have wrong keyboard layout
+" command šá wq
+" command шя wq
 
 " always highlight overlong lines as error!
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
@@ -73,8 +79,6 @@ highlight SpecialKey ctermfg=lightred
 let g:po_translator = "Flammie A Pirinen <flammie@iki.fi>"
 let g:po_lang_team = "Lokalisointi-Laatu <laatu@lokalisointi.org>"
 
-" language tool meh
-let g:languagetool_jar = "~/LanguageTool-3.8/languagetool-commandline.jar"
 " gvim don't be smart with file selector
 :autocmd FileType * unlet! b:browsefilter
 
@@ -137,3 +141,4 @@ let g:lightline = {
 
 " gitgutter against huge files
 let g:gitgutter_max_signs = 5000
+
