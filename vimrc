@@ -2,6 +2,7 @@
 set nocompatible
 filetype off
 
+
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
@@ -142,3 +143,5 @@ let g:lightline = {
 " gitgutter against huge files
 let g:gitgutter_max_signs = 5000
 
+" llama settings
+let g:llama_config = { 'show_info': 0 }
