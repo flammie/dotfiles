@@ -20,7 +20,8 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'cespare/vim-toml'
 Plugin 'chrisbra/unicode.vim'
-Plugin 'ggml-org/llama.vim'
+Plugin 'github/copilot.vim'
+" Plugin 'ggml-org/llama.vim'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
